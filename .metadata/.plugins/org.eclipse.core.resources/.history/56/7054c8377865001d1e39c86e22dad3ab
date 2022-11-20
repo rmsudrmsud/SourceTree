@@ -1,0 +1,48 @@
+package master;
+
+public class MasterVo {
+	private String mas_seq;
+	private String memid;
+	private String masid;
+	private String pwd;
+	
+	public MasterVo() {
+		
+	}
+	public MasterVo(String mas_seq, String memid, String masid, String pwd) {
+		this.mas_seq = mas_seq;
+		this.memid = memid;
+		this.masid = masid;
+		this.pwd = pwd;
+	}
+	public String getMas_seq() {
+		return mas_seq;
+	}
+	public void setMas_seq(String mas_seq) {
+		this.mas_seq = mas_seq;
+	}
+	public String getMemid() {
+		return memid;
+	}
+	public void setMemid(String memid) {
+		this.memid = memid;
+	}
+	public String getMasid() {
+		return masid;
+	}
+	public void setMasid(String masid) {
+		this.masid = masid;
+	}
+	public String getPwd() {
+		return pwd;
+	}
+	public void setPwd(String pwd) {
+		this.pwd = pwd;
+	}
+	@Override
+	public String toString() {
+		return "MasterVo [mas_seq=" + mas_seq + ", memid=" + memid + ", masid=" + masid + ", pwd=" + pwd + "]";
+	}
+	
+	
+}

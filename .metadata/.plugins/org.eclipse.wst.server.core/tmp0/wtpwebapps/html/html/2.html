@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>2022/11/18 html</title>
+</head>
+<body>
+<ul type>
+<li>일반테이블</li>
+<table border="1">
+<tr><td>aaa</td><td>bbb</td><td>ccc</td></tr>
+<tr><td>ddd</td><td>eee</td><td>fff</td></tr>
+</table></br>
+
+<li>colspan=칸수: 칸가로로 합치기</li>
+<table border="1">
+<tr><td colspan="2">aaa</td><td>ccc</td></tr>
+<tr><td>ddd</td><td>eee</td><td>fff</td></tr>
+</table></br>
+
+<li>rowspan=칸수: 칸세로로 합치기</li>
+<table border="1">
+<tr><td rowspan="2">aaa</td><td>bbb</td><td>ccc</td></tr>
+<tr><td>eee</td><td>fff</td></tr>
+</table></br>
+</ul>
+ol : 순서 있는 목록. 속성 type : 1, i, I, a, A<br/>
+ul : 순서 없는 목록. 속성 type : 모양 지정. disc, circle, square<br/>
+li : ol이나 ul에서 사용하는 목록한개
+<ol>
+<li>html</li>
+<li>css</li>
+<li>javascript</li>
+</ol>
+
+<ol type="I">
+<li>html</li>
+<li>css</li>
+<li>javascript</li>
+</ol>
+
+<ul type="disc">
+<li>html</li>
+<li>css</li>
+<li>javascript</li>
+</ul>
+
+<ul type="circle">
+<li>html</li>
+<li>css</li>
+<li>javascript</li>
+</ul>
+
+<ul type="square">
+<li>html</li>
+<li>css</li>
+<li>javascript</li>
+</ul>
+
+<!-- 주석 -->
+<!-- ctrl+shift+c -->
+
+블럭 지정 태그:div(단락을 구분), span(단락 구분X)
+<div style="width:100px;height:100px;background-color:yellow;color:blue">div내부</div>
+div밖<span>span내부</span>
+</body>
+</html>

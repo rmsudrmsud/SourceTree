@@ -1,0 +1,97 @@
+package start;
+
+import java.util.Scanner;
+
+import master.MasterDao;
+import master.MasterService;
+import member.MemberService;
+
+public class Menu {
+	
+	MemberService meService = new MemberService();
+	MasterService maService = new MasterService();
+	
+	//첫 화면 
+	public void run(Scanner sc) {
+		System.out.println("=========================");
+		System.out.println("스포츠 경기 티켓 예매 사이트");
+		System.out.println("=========================");
+		System.out.println("(1) 로그인");
+		System.out.println("(2) 회원가입 ");
+		System.out.println("=========================");
+		System.out.print(": ");
+		int num = sc.nextInt();
+		
+			if(num == 1) {
+				meService.login(sc);
+				
+				if(meService.memType == 0) {
+					memberRun(sc); //회원 로그인  화면 
+				} else if (meService.memType == 1) {
+					masterRun(sc); //관리자 로그인 화면 
+				}
+			} else if (num == 2) {
+				meService.join(sc);
+				run(sc);
+			}			
+	}//run()
+	
+	//회원 로그인 화면
+	public void memberRun(Scanner sc) {
+		boolean flag = true;
+		while(flag) {
+			System.out.println();
+			System.out.println("(1) 스포츠 경기 예매 ");
+			System.out.println("(2) 매점  ");
+			System.out.println("(3) 회원정보  ");		
+			System.out.println("(4) 게시판  ");
+			System.out.println("(5) 로그아웃 ");		
+			System.out.println("=========================");
+			System.out.print("> ");
+			int num = sc.nextInt();
+			switch(num) {
+			case 1:
+				break;
+			case 2:
+				break;
+			case 3:
+				break;
+			case 4:
+				break;
+			case 5:
+				break;
+			}			
+		}//while()
+	}//memberRun()
+	
+	//관리자 로그인 화면 
+	public void masterRun(Scanner sc) {
+		boolean flag = true;
+		while(flag) {
+			System.out.println();
+			System.out.println("(1) 회원 관리 ");
+			System.out.println("(2) 블랙리스트 관리 ");
+			System.out.println("(3) 경기 관리 ");		
+			System.out.println("(4) 게시판  관리 ");
+			System.out.println("(5) 결제 관리 ");		
+			System.out.println("=========================");
+			System.out.print("> ");
+			int num = sc.nextInt();
+			
+			switch(num) {
+			case 1:
+				maService.getAll();
+				break;
+			case 2:
+				break;
+			case 3:
+				break;
+			case 4:
+				break;
+			case 5:
+				break;
+			}			
+		}//while()
+	}//masterRun()
+
+}//Menu

@@ -1,0 +1,16 @@
+package master;
+
+import java.util.Scanner;
+
+import member.MemberService;
+
+public class Main {
+	
+	public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in);
+		MasterService ms = new MasterService();
+		ms.getAll();
+	}
+
+}

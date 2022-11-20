@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+<h3>폼작성</h3>
+Form : 입력 폼 태그.<br/> 
+action : 입력값을 받을 서버페이지 경로. 즉 컨트롤러<br/>
+method:전송방식(get/post)<br/>
+get : 폼데이터를 url에 붙여서 서버에 전송하는 방식. -> 데이터가 노출, 길이(url길이)의 제약. 한글이 잘 깨짐
+post : 폼데이터를 패킷 헤더에 담아서 전달. 데이터 노출 안됨. 길이 제약 없음. 한글깨짐 적음
+<form action="/html/FormTest" method="get"> <!--/html/formtest에 요청보내고 GET방식으로-->
+<h3>get요청</h3>
+이름:<input type="text" name="nameval"><br/>
+<!-- type="text" : 가장 많이사용되는 텍스트 입력박스. 이름 : nameval-> 서버에서 값읽어갈때 이름을 이용 <br/>-->
+<input type="submit" value="전송">
+</form><br/>
+
+<h3>post요청</h3>
+<form action="/html/FormTest" method="post">
+이름:<input type="text" name="nameval"><br/>
+
+패스워드:<input type="password" name="pwd"><br/>
+<!-- <input type="password": 입력받는것은 같지만 외부에보이지않게 가려줌<br/>-->
+
+라디오버튼:<input type="radio" name="ra" value="html">html
+<input type="radio" name="ra" value="css" checked>css
+<input type="radio" name="ra" value="javascript">javascript<br/>
+
+체크박스 : <input type="checkbox" name="ch" value="1">사과
+체크박스 : <input type="checkbox" name="ch" value="2">귤
+체크박스 : <input type="checkbox" name="ch" value="3" checked>포도<br/>
+
+콤보박스:<select name="sel">
+<option value="val1">mysql</option>
+<option value="val2" selected>oracle</option>
+<option value="val3">ms-sql</option>
+</select><br/>
+
+여러줄 입력()텍스트에어리어)<textarea rows="5" cols="15" name="content">
+가입인사</textarea><br/>
+
+<input type="button" value="일반버튼" onclick="alert('버튼눌림')"><br/>
+<input type="reset" value="초기화">
+<input type="submit" value="전송">
+<button>전송</button>
+<input type="number">
+<input type="date">
+<input type="color"><br/>
+<iframe src="2.html" style="width:300px;height:300px"></iframe>
+
+</form><br/>
+</body>
+</html>
