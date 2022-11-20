@@ -34,7 +34,6 @@ INDEX VERSION 1.131+/Users/choigeunhyeong/Documents/Kosta/.metadata/.plugins/org
 1494695563.index
 27292669.index
 3552100304.index
-495321748.index
 3301608466.index
 3469571245.index
 2403192798.index
