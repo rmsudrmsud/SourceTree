@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type = "text/javascript">
+
+/* 고전적문법의 함수
+function add(x, y){
+	return x+y;
+}
+//파라메터로 단수받아서 구구단 한 단 출력
+function gugudan(i){
+	for(j=1;j<10;j++){
+		document.write(i+" * "+j+" = "+(j*i)+"<br/>");
+	}
+} */
+
+//추가된문법의 함수
+const add = (x, y) => {
+	return x+y;
+}
+
+const gugudan = (i) =>{
+	document.write(i+"단 + \n");
+	for(j=1;j<10;j++){
+		document.write(i+" * "+j+" = "+(j*i)+"<br/>");
+	}
+}
+</script>
+</head>
+<body>
+<script type="text/javascript">
+let res = add(1,2);
+document.write("res:"+ res+"<br/>");
+res = add("aaa","bbb");
+document.write("res:"+ res+"<br/>");
+res = gugudan(3);
+</script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type = "text/javascript">
+function add(x, y){
+	return x+y;
+}
+</script>
+</head>
+<body>
+<script type="text/javascript">
+let res = add(1,2);
+document.write("res:"+ res+"<br/>");
+res = add("aaa","bbb");
+document.write("res:"+ res+"<br/>");
+</script>
+</body>
+</html>

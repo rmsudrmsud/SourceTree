@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+let idd = ['aaa','bbb','ccc'];
+console.log(idd);
+let op="";
+const a = (val)=>{
+	if(idd==val){
+		document.write('중복된아이디 다시입력');
+	}else{
+		document.write('사용 가능한 아이디')
+	}
+}
+</script>
+</head>
+<body>
+<h3>회원가입</h3>
+<table border="1">
+<tr>
+<th>ID(아이디는 6글자 이상)</th> <!-- 배열에 아이디3개정도 저장 'aaa'.'bbb'.'ccc' 중복버튼클릭시 비교후 일치하는것있으면 중복됨, 다시입력메시지 가입실패-->
+	<td><input type="text" name="id">
+	<input type="button" value="중복체크" onclick="a()">
+	</td>
+</tr>
+
+<tr>
+<th>PWD(비밀번호는 4글자 이상)</th> <!-- pwd1과 pwd2가같은지 체크 -->
+	<td><input type="password" name="pwd1">
+	<input type="password" name="pwd2">
+	<input type="button" value="비밀번호확인" onclick="">
+	</td>
+</tr>
+
+<tr>
+<th>NAME</th>
+	<td><input type="text" name="name"></td>
+</tr>
+
+<tr>
+<th>약관동의</th> <!-- 약관동의 iframe아닌가/??? 약관에 동의체크해야가입완료 -->
+	<td>약관약관약관약관약관약관약관<br/>
+	<td><input type ="radio" name="ra">동의함</td>
+</tr>
+
+<tr>
+<th>가입</th> <!-- id, pwd, name,약관동의 다되어야 가입가능, 가입완료이후 가입축하 메시지! -->
+	<td><input type="button" value="가입" onclick=""></td>
+</tr>
+
+</table>
+</body>
+</html>

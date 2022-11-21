@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script type="text/javascript">
+let title = [["1", "2", "3", "+"], ["4", "5", "6", "-"], 
+	["7", "8", "9", "*"], ["0", "=", "C", "/"]];
+let op = "";
+const btn = (val) => {
+	switch(val){
+	case "+":
+	case "-":
+	case "*":
+	case "/":
+		op = val;
+		break;
+	case "C":
+		clear();
+		break;
+	case "=":
+		calc();
+		break;
+	default://숫자버튼
+		f.res.value += val;
+	}
+}
+</script>
+<style type="text/css">
+input[type=button]{
+	width:70px;
+	height:70px;
+	font-size:20px;
+}
+input[type=number]{
+	width:290px;
+	height:30px;
+	font-size:15px;
+}
+</style>
+</head>
+<body>
+<h3>계산기</h3>
+<form action="" name="f">
+<table border="1" cellspacing="0">
+<tr><td colspan="4"><input type="number" name="res"></td></tr>
+<script>
+for(i=0;i<title.length;i++){
+	document.write("<tr>");
+	for(j=0;j<title[i].length;j++){
+		document.write("<td>");
+		document.write("<input type='button' value='"+title[i][j]+
+				"' onclick=btn('"+title[i][j]+"')>");
+		document.write("</td>");
+	}
+	document.write("</tr>");
+}
+</script>
+</table>
+</form>
+</body>
+</html>

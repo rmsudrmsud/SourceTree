@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script type="text/javascript">
+let title = [["1", "2", "3", "+"], ["4", "5", "6", "-"], 
+	["7", "8", "9", "*"], ["0", "=", "C", "/"]];
+let op = "";
+let num = 0, resVal = 0;
+const btn = (val) => {
+	switch(val){
+	case "+":
+	case "-":
+	case "*":
+	case "/":
+		op = val;
+		num = parseInt(f.res.value); //문자를 정수타입으로
+		f.res.value="";
+		break;
+	case "C":
+		clear();
+		break;
+	case "=":
+		calc();
+		break;
+	default://숫자버튼
+		f.res.value += val;
+	}
+}
+
+const calc = () => {
+	let num2 = parseInt(f.res.value);
+	
+	switch(op){
+	case "+":
+		resVal = num + num2;
+		break;
+	case "-":
+		resVal = num - num2;
+		break;
+	case "*":
+		resVal = num * num2;
+		break;
+	case "/":
+		if(num2==0){
+			alert('0으로 나눌 수 없음');
+			resVal=0;
+		}else{
+			resVal = num / num2;
+		}
+		break;
+	}
+	f.res.value = resVal;
+}
+
+const clear = () => {
+	num = 0;
+	op = "";
+	resVal = 0;
+	f.res.value = "";
+}
+
+</script>
+<style type="text/css">
+input[type=button]{
+	width:70px;
+	height:70px;
+	font-size:20px;
+}
+input[type=number]{
+	width:290px;
+	height:30px;
+	font-size:15px;
+}
+</style>
+</head>
+<body>
+<h3>계산기</h3>
+<form action="" name="f">
+<table border="1" cellspacing="0">
+<tr><td colspan="4"><input type="number" name="res"></td></tr>
+<script>
+for(i=0;i<title.length;i++){
+	document.write("<tr>");
+	for(j=0;j<title[i].length;j++){
+		document.write("<td>");
+		document.write("<input type='button' value='"+title[i][j]+
+				"' onclick=btn('"+title[i][j]+"')>");
+		document.write("</td>");
+	}
+	document.write("</tr>");
+}
+</script>
+</table>
+</form>
+</body>
+</html>

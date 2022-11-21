@@ -6596,3 +6596,16 @@ org.eclipse.swt.SWTException: Widget is disposed
 
 !ENTRY org.eclipse.wst.server.core 4 0 2022-11-20 20:51:10.421
 !MESSAGE Server Tomcat v9.0 Server at localhost failed to start.
+
+!ENTRY org.eclipse.lsp4e 1 0 2022-11-21 10:10:48.672
+!MESSAGE [Info]	ESLint server running in node v16.14.2
+
+!ENTRY org.eclipse.lsp4e 1 0 2022-11-21 10:10:48.802
+!MESSAGE [Info]	[lspserver] Using Typescript version (bundled) 4.6.4 from path "/Applications/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.wildwebdeveloper_0.6.0.202206151321/node_modules/typescript/lib/tsserver.js"
+
+!ENTRY org.eclipse.lsp4e 4 0 2022-11-21 10:10:49.311
+!MESSAGE [Error]	[tsserver] env: node: No such file or directory
+
+
+!ENTRY org.eclipse.lsp4e 1 0 2022-11-21 15:39:16.917
+!MESSAGE [Info]	ESLint server running in node v16.14.2

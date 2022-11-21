@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script type = "text/javascript">
+let name="aaa";
+let age=12;
+	document.write("hello javascript~head안녕<br/>"); //html페이지에 출력
+	</script>
+<title>Insert title here</title>
+</head>
+<body>
+	<script type = "text/javascript">
+	document.write("hello javascript~body<br/>"); //html페이지에 출력
+	document.write("name"+name+<br/>);
+	document.write("age"+age+<br/>);
+	</script>
+</body>
+</html>

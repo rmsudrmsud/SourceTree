@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta charset="UTF-8">
+<script type="text/javascript">
+function a(){
+	
+}
+</script>
+<title>Insert title here</title>
+</head>
+<body>
+<h3>  계산기</h3>
+<table border="1" width=100px; height=100px;>
+<tr><td colspan="4"><input type="number" name"res"></td></tr>
+<tr><td><input type="button" value="1" onclick="a()"></td><td><input type="button" value="2" onclick="b()"></td><td><input type="button" value="3" onclick="a()"></td><td><input type="button" value="+" onclick="a()"></td></tr>
+<tr><td><input type="button" value="4" onclick="a()"></td><td><input type="button" value="5" onclick="a()"></td><td><input type="button" value="6" onclick="a()"></td><td><input type="button" value="-" onclick="a()"></td></tr>
+<tr><td><input type="button" value="7" onclick="a()"></td><td><input type="button" value="8" onclick="a()"></td><td><input type="button" value="9" onclick="a()"></td><td><input type="button" value="*" onclick="a()"></td></tr>
+<tr><td><input type="button" value="0" onclick="a()"></td><td><input type="button" value="=" onclick="a()"></td><td><input type="button" value="c" onclick="a()"></td><td><input type="button" value="/" onclick="a()"></td></tr>
+
+</table>
+</body>
+</html>
+
+<table>
+   <tr>
+      <td><input type="button" value="test"></td>
+      <td><input type="button" value="test"></td>
+   </tr>
+</table>
