@@ -77,20 +77,25 @@ const c = () =>{
 
 const print=() =>{
 	let html = "==가입 정보==<br/>";
+	console.log(html)
 	html += "id:"+f.id.value+"<br/>";
+	console.log(html)
 	html +=  "pwd:"+f.pwd1.value+"<br/>";
+	console.log(html)
 	html += "name:"+f.name.value+"<br/>"
-	let myDiv = document.getElementById("data"); // dom에서 원하는 요소 가져오는 메서드. getElementsBy태그이름 : 여러개. 배열에담아서반환 
-	alert(myDiv.innerHTML); //innerHTML : 여는태그 닫는태그 사이의 값.
+	console.log(html)
+	let myDiv = document.getElementById("data");// dom에서 원하는 요소 가져오는 메서드. getElementsBy태그이름 : 여러개. 배열에담아서반환
+	 
+	alert(myDiv.innerHTML); //innerHTML : div 여는태그 닫는태그 사이의 값으로 넣는함수
 	myDiv.innerHTML = html; //값을 바꿔줌
-
+	
 }
 
 </script>
 </head>
 <body>
 <h3>회원가입</h3>
-<form action="", name="f">
+<form action="" name="f">
 <table border="1">
 <tr>
 <th>ID(아이디는 6글자 이상)</th> <!-- 배열에 아이디3개정도 저장 'aaa'.'bbb'.'ccc' 중복버튼클릭시 비교후 일치하는것있으면 중복됨, 다시입력메시지 가입실패-->
@@ -105,10 +110,11 @@ const print=() =>{
 	<input type="password" name="pwd2">
 	<input type="button" value="비밀번호확인" onclick="b()">
 	</td>
-</tr>
+</tr>	
+
 
 <tr>
-<th>NAME</th>
+<th>NAME></th>
 	<td><input type="text" name="name"></td>
 </tr>
 
