@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+const a = () =>{
+	let amount = f.value.amount
+	alert("결제금액: "+amount*29000+"");
+}
+</script>
+</head>
+<body>
+<form action="" name="f">
+<table border="1">
+<tr><th colspan="3">컴퓨터</th></tr>
+<tr><td rowspan="3"><img src="../img/computer.jpg"></td>
+<td>가격:29000</td>
+<td>수량:
+	<select name="anmout">
+	<option value="1">1개</option>
+	<option value="2">2개</option>
+	<option value="3">3개</option>
+	</select></td>
+<td><input type ="button" value="결과확인" onclick="a()"></td>
+</table>
+</form>
+</body>
+</html>

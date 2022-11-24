@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<table>
+<tr>
+	<th colspan="2" style="height:150px;" bgcolor="#d9e5ff"><h1>Kosta shop</h1></th>
+</tr>
+<tr>
+	<td style="width:300px; height:300px; text-align:center;" bgcolor="pink">동물<br/>강아지<br/>고양이<br/>등등</td>
+	<td style="width:500px; height:300px; text-align:center;" bgcolor="pink">강아지<br/>
+	<img src="../img/dog.jpg" style="width:100px;height:100px">
+	<img src="../img/dog2.jpg" style="width:100px;height:100px">
+	<img src="../img/dog3.jpg" style="width:100px;height:100px">
+</tr>
+</table>
+</body>
+</html>

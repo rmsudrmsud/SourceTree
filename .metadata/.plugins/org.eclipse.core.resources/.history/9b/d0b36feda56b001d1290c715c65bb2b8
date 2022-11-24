@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script>
+let title="";
+let img="";
+
+onload = () => {
+	title = localStorage.getItem("title");
+	img = localStorage.getImg("img");
+	
+	let titleDom = document.getElementById("title");
+	titleDom.innerHTML = title;
+
+	document.img.src = img;
+}
+</script>
+</body>
+</html>

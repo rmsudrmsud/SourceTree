@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<div class= "wrap">
+		<div class="image">
+		<img src="../project/netflix/banner.jpg" alt="" />
+		</div>
+		<div class="text">
+			<p>가나다라마바사</p>
+		</div>
+	</div>
+</body>
+</html>

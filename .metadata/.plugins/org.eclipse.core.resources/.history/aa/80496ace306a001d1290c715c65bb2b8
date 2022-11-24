@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+window.onload = () => {
+	document.headImg.src = "../img/head/locket.jpg"; //document.이름.속성! 
+}
+</script>
+</head>
+<body>
+<img src="" name="headImg">
+</body>
+</html>

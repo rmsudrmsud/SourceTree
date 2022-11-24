@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<table border="1">
+<tr>
+	<td><h1>Kosta shop</h1></td>
+</tr>
+<tr>
+	<td>내용</td><td>내용</td>
+</tr>
+</table>
+</body>
+</html>

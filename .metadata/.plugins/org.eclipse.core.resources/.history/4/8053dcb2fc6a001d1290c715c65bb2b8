@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+//대분류
+let cate_0 = ['전자제품', '의류품', '생필품', '애완'];
+//중분류
+let cate_1 = [['가전','컴퓨터','음향'], ['정장', '스포츠웨어', '방한'], ['음식','생활소품'], ['강아지','고양이','기타']];
+//소분류
+let cate_3 = [[['냉장고', '세탁기', 'tv'], ['데스크탑', '노트북', '주변기기'],['스피커', '오디오', '우퍼']], 
+[['상의', '하의'],['스키복','보드북','레깅스'],['올코트', '다운점퍼', '솜바지']],[['면류', '밥류', '간식'], ['조명','물티슈']],
+[['강아지 간식', '강아지패드'], ['고양이 간식', '고양이 패드'], ['기타 간식', '기타 패드']]];
+
+onload = () => {
+	let sel1 = document.getElementById("sel1");
+	let txt = "";
+	for(i=0;i<cate_0.length;i++){
+		txt += "<option value="+i+">"+cate_0[i]+"</option>";
+	}
+	sel1.innerHTML = txt;
+	
+	let sel2 = document.getElementById("sel2");
+	let txt2 = "";
+	for(i=0;i<cate_0.length;i++){
+		txt2 += "<option value="+i+">"+cate_1[i]+"</option>";
+	}
+	sel2.innerHTML = txt2;
+	//요소의 이벤트핸들러 등록
+	sel1.addEventListener("change", f1)
+}
+
+const f1 = () =>{
+	let val = f.sel1.value;
+	let arr = cate_1[parseInt(val)];
+	for(i=0;i<arr.length;i++){
+	alert(arr[i]);
+	}
+}
+
+</script>
+</head>
+<body>
+<h3>상품 분류 선택</h3>
+<form name="f">
+<table style="width:100px;height:100px">
+<tr id="tr1"><th>대분류</th></tr>
+<tr id="tr2"><td><select id="sel1" name="sel1"></select></td></tr>
+<tr id="tr3"><td><select id="sel2" name="sel2"></select></td></tr>
+</table>
+</form>
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<table>
+<img src="" name="headImg"><br/>
+<tr>
+<td colspan="3"><img src="../img/naver.jpg"></td>
+	<td>AAAA</td>
+	<td>BBBB</td>
+	<td>CCCC</td>
+</tr>
+</table>
+</body>
+</html>

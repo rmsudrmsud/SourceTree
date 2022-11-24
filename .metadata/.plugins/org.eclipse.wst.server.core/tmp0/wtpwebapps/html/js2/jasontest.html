@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script>
+let val = '{"name":"aaa", "tel":"111", "age":12, "flag":true}';//제이슨값을 갖는 전체
+//전체를 문자열로 묶음 ' '
+const obj = JSON.parse(val); //객체를 제이슨으로 파싱
+document.write(obj.name+"<br/>");
+document.write(obj.tel+"<br/>");
+document.write(obj.age+"<br/>");
+document.write(obj.flag+"<br/>");
+
+let val2 = {"name":"aaa", "tel":"111", "age":12, "flag":true};
+document.write(val2.name+"<br/>");
+document.write(val2.tel+"<br/>");
+document.write(val2.age+"<br/>");
+document.write(val2.flag+"<br/>");
+
+let arr = [{"name":"aaa", "tel":"111", "age":12, "flag":true},
+	{"name":"bbb", "tel":"222", "age":23, "flag":false},
+	{"name":"ccc", "tel":"333", "age":34, "flag":true}];
+	
+let arr2 = ['aaa', 'bbb', 'ccc'];
+
+for(let x of arr2){
+	document.write(x+"<br/>");
+}
+
+for(let obj2 of arr){
+	document.write(obj.name+"<br/>");
+	document.write(obj.tel+"<br/>");
+	document.write(obj.age+"<br/>");
+	document.write(obj.flag+"<br/>");
+}
+</script>
+</body>
+</html>

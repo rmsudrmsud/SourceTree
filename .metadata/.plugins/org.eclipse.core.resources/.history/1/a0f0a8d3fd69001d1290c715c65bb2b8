@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<table width=500px>
+<tr>
+	<th colspan="2" bgcolor="#d9e5ff";><h1>Kosta shop</h1></th>
+</tr>
+<tr>
+	<td style="width:300px; height:300px; text-align:center;" >메뉴<br/>가전<br/>의류<br/>식품</td>
+	<td width=300px height=300px>상품</td>
+</tr>
+</table>
+</body>
+</html>

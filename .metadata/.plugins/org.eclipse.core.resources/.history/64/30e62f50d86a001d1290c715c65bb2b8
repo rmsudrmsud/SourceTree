@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+let cnt = 1; //글번호 : 글한개 작성하는 div의 id로사용
+const addBoard = () => {
+	let name = addForm.writer.value; //작성자 입력값
+	let cont = addForm.content.value; //글 내용 입력값
+	
+	let listDiv = document.getElementById("list");
+	let newEl = document.createElement("div"); //새 div생성
+	newEl.setAttribute("id","div_"+cnt); //id 값을 div_1, div_2...로 부여 => 수정,삭제버튼에서 사용하기위해
+	cnt++;
+	newEl.style.border = "1px solid black";
+	let txt = "";
+	txt += "writer:"+name+"<br/>"
+	txt += "content:"+cont+"<br/>"
+	txt += "<input type='button' value='수정'>";
+	txt += "<input type='button' value='삭제'>";
+	newEl.innerHTML = txt; //완성된 div
+	listDiv.appendChild(newEl); //div를 자식으로 추가
+	//폼양식 초기화
+	addForm.writer.value = "";
+	ddForm.content.value = "";
+}
+</script>
+</head>
+<body>
+<h3>실시간 댓글</h3>
+<form action="" name="addForm">
+<table id="t1" border="1">
+<tr>
+	<th>작성자</th>
+	<td><input type="text" id="writer" name="writer"></td> <!-- addform.name.~~ getElementById("id") -->
+</tr>
+<tr>
+	<th>내용</th>
+	<td><input type="text" id="content" name="content"></td>
+</tr>
+<tr>
+	<th>저장</th>
+	<td><input type="button" value="작성" onclick="addBoard()"></td>
+</tr>
+</table>
+</form>
+<h3>글목록</h3>
+<div id="list"></div>
+</body>
+</html>

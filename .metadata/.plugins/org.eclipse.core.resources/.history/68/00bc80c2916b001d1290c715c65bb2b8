@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body bgcolor="black">
+<img src="../project/netflix/netflix.png" style="max-width:100px; height:100px;" name="headImg"><br/>
+<table>
+<tr>
+	<td><img src="../project/netflix/movie1.jpg" style="max-width:100%; height:auto;" name="movie1"></td>
+</tr>
+
+</table>
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+let cnt = 1; //글번호 : 글한개 작성하는 div의 id로사용
+const addBoard = () => {
+	let num = cnt;
+	let name = addForm.writer.value; //작성자 입력값
+	let cont = addForm.content.value; //글 내용 입력값
+	
+	let listDiv = document.getElementById("list");
+	let newEl = document.createElement("div"); //새 div생성
+	newEl.setAttribute("id","div_"+num); //id 값을 div_1, div_2...로 부여 => 수정,삭제버튼에서 사용하기위해
+	
+	newEl.style.border = "1px solid black";
+	let txt = "";
+	txt += "writer:"+name+"<br/>"
+	txt += "content:"+cont+"<br/>"
+	txt += "<input type='button' value='수정' onclick='editf("+num+")'>"; //어떤 div를 editf하는지 알아야해서 num
+	txt += "<input type='button' value='삭제' onclick='del("+num+")'>";
+	newEl.innerHTML = txt; //완성된 div
+	listDiv.appendChild(newEl); //div를 자식으로 추가
+	
+	//폼양식 초기화
+	addForm.writer.value = "";
+	addForm.content.value = "";
+	cnt++;
+}
+//삭제
+const del = (num) => {
+	let delDiv = document.getElementById("div_"+num); //삭제할 것
+	let listDiv = document.getElementById("list"); //부모에서 요소가져오기
+	list.removeChild(delDiv);
+}
+
+
+/* const a = () => {
+	let p = document.getElementsByTagName("edifForm")[0];
+	p.style.display='';
+} */
+
+//수정: 2단계로 나뉨
+const editf = (num) => {
+	//수정폼을 보여줄 div 추출
+	let editDiv = document.getElementById("div_"+num);
+	//수정폼 추출
+	let eForm = document.getElementById("editForm");
+	editDiv.appendChild(eForm);
+	eForm.style.display = ''; //화면에보이도록
+}
+
+const cancle = () => {
+	//body 요소 추출
+	let body = document.getElementsByTagName("body")[0];
+	//수정폼 추출
+	let eForm = document.getElementById("editForm");
+	//editForm을 body의 자식으로 돌아감
+	body.appendChild(eForm);
+	//화면안보이게
+	eForm.style.display = 'none';
+}
+</script>
+</head>
+<body>
+	<h3>실시간 댓글</h3>
+	<form action="" name="addForm">
+		<table id="t1" border="1">
+			<tr>
+				<th>작성자</th>
+				<td><input type="text" id="writer" name="writer"></td>
+				<!-- addform.name.~~ getElementById("id") -->
+			</tr>
+			<tr>
+				<th>내용</th>
+				<td><input type="text" id="content" name="content"></td>
+			</tr>
+			<tr>
+				<th>저장</th>
+				<td><input type="button" value="작성" onclick="addBoard()"></td>
+			</tr>
+		</table>
+	</form>
+
+	<h3>글목록</h3>
+	<div id="list"></div>
+	
+	<form action="" id="editForm" name="editForm" style="display: none">
+		<table id="t1" border="1">
+			<tr>
+				<th>작성자</th>
+				<td><input type="text" id="writer" name="writer"></td>
+				<!-- addform.name.~~ getElementById("id") -->
+			</tr>
+			<tr>
+				<th>내용</th>
+				<td><input type="text" id="content" name="content"></td>
+			</tr>
+			<tr>
+				<th>수정</th>
+				<td><input type="button" value="수정" onclick="editf()">
+					<input type="button" value="취소" onclick="cancle()">
+				</td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>

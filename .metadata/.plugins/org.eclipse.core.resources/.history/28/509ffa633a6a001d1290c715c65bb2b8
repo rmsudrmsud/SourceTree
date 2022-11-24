@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+let prods = [{"title":"컴퓨터", "price":2900000, "info":"내일도착보장", "img":"../img/computer.jpg"},
+	{"title":"폰", "price":1000000, "info":"내일도착보장", "img":"../img/phone.jpg"},
+	{"title":"tv", "price":2900000, "info":"내일도착보장", "img":"../img/tv.jpg"},
+	{"title":"개", "price":290000, "info":"11월23일도착보장", "img":"../img/dog.jpg"},
+	{"title":"개2", "price":290000, "info":"내일도착보장", "img":"../img/dog2.jpg"},
+	{"title":"개3", "price":290000, "info":"내일도착보장", "img":"../img/dog3.jpg"}]
+</script>
+</head>
+<body>
+<script>
+// 파람으로 방번호 받아서 그 방에있는 객체의 정보를 출력하는 함수
+const print = (idx) => {
+	let show = document.prods[idx];
+}
+let obj = prods[0];
+document.write("title:"+obj.title+"<br/>");
+document.write("price:"+obj.price+"<br/>");
+document.write("img:"+obj.img+"<br/>");
+document.write("info:"+obj.info+"<br/>");
+</script>
+</body>
+</html>

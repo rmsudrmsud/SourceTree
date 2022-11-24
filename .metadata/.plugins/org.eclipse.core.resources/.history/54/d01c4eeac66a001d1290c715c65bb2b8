@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	onload = () => {
+		let h3 = document.getElementsByTagName("h3")[0]; //getElementsByTagName : 요소가 하나밖에없어도 무조건배열에 담아줌
+		/* alert(h3.innerHTML); */
+		let myDiv = document.getElementById("myDiv"); //Id로검색은 하나니까 중복안됨
+		myDiv.innerHTML += "<br/>" + h3.innerHTML; //+=을 써서 div값 지우지않고 추가해서 출력
+		
+		let txt="";
+		let tdArr = document.getElementsByTagName("td");
+		for(let td of tdArr){
+			txt += td.innerHTML + "<br/>";
+		}
+		myDiv.innerHTML += txt;
+	
+</script>
+</head>
+<body>
+<h3>Dom 실습</h3>
+<img src="../img/dog.jpg" style="width:100px;height:100px"><br/>
+<table border="1">
+<tr>
+	<td class="tr1">aaa</td>
+	<td class="tr1">bbb</td>
+	<td class="tr1">ccc</td>
+</tr>
+<tr>
+	<td>ddd</td>
+	<td>eee</td>
+	<td>fff</td>
+</tr>
+</table><br/>
+<div id="myDiv">div영역</div>
+</body>
+</html>

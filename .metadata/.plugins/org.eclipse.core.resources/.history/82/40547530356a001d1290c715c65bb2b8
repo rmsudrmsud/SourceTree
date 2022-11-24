@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+let headImgs =["locket.jpg","head1.jpg"]
+let cnt=0; //출력할 이미지 방번호
+
+window.onload = () => {
+	a(); //document.이름.속성! 
+}
+
+const a = () => {
+	document.headImg.src = "../img/head/" + headImgs[cnt%2]; //document.이름.속성! cnt%2:배열의 범위안에서돌기위해서 
+	cnt++; // 다음이미지로 넘김
+	setTimeout(a,1000); //지정한 시간뒤에지명한 함수 호출. (함수, 시간) setTimeout 자체는 한번만 호출, 지금은 함수안에있어서 계속반복됨
+}
+//setTimeout(a,1000) ; 만약 이곳에있으면 한번 a 호출이후 멈춤
+</script>
+</head>
+<body>
+<img src="" name="headImg">
+</body>
+</html>

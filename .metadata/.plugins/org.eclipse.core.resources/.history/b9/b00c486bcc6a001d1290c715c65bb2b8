@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	onload = () => {
+		let h3 = document.getElementsByTagName("h3")[0]; //getElementsByTagName : 요소가 하나밖에없어도 무조건배열에 담아줌
+		/* alert(h3.innerHTML); */
+		let myDiv = document.getElementById("myDiv"); //Id로검색은 하나니까 중복안됨
+		myDiv.innerHTML += "<br/>" + h3.innerHTML; //+=을 써서 div값 지우지않고 추가해서 출력
+		
+		let txt="";
+		let tdArr = document.getElementsByTagName("td");
+		for(let td of tdArr){
+			txt += td.innerHTML + "<br/>";
+		}
+		myDiv.innerHTML += txt;
+		
+		let txt2 = "";
+		let classArr = document.getElementsByClassName("tr1");
+		for(let td of classArr){
+			txt2 += td.innerHTML + "<br/>";
+		}
+		myDiv.innerHTML += txt2;
+	}
+const a = () => {
+	let titleEl = document.getElementById("title");
+	let newTitle = titleEl.value; // 텍스트박스에 입력한 값 value->체크박스나 텍스트박스같은 입력? 하는애들의 value값을 가져옴
+	let h3 = document.getElementsByTagName("h3")[0];
+	h3.innerHTML = newTitle;
+}
+
+const b = () => {
+	let imgEl = document.getElementsByTagName("img")[0];
+	let imgTxt = document.getElementById("img");
+	let path = imgTxt.value;
+	imgEl.src = path; //요소의 속성 변경
+}
+
+const c = (size) => {
+	let imgEl = document.getElementsByTagName("img")[0];
+	imgEl.style.width = size+'px';
+	imgEl.style.height = size+'px';
+}
+</script>
+</head>
+<body>
+<h3>Dom 실습</h3>
+new title: <input type="text" id="title">
+<input type="button" value="제목변경" onclick="a()"><br/>
+<img src="../img/dog.jpg" style="width:100px;height:100px"><br/>
+
+change img:<input type="text" id="img">
+<input type="button" value="그림변경" onclick="b()"><br/>
+
+크기변경
+<input type="button" value="100x100" onclick="c(100)">
+<input type="button" value="200x200" onclick="c(200)">
+<input type="button" value="300x300" onclick="c(300)">
+<input type="button" value="400x400" onclick="c(400)"><br/>
+
+<table border="1">
+<tr>
+	<td class="tr1">aaa</td>
+	<td class="tr1">bbb</td>
+	<td class="tr1">ccc</td>
+</tr>
+<tr>
+	<td>ddd</td>
+	<td>eee</td>
+	<td>fff</td>
+</tr>
+</table><br/>
+<div id="myDiv">div영역</div>
+</body>
+</html>

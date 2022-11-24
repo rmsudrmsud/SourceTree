@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script>
+let val = '{“name”:”aaa”, “tel”:”111”, “age”:12, “flag”:true}';//제이슨값을 갖는 전체
+//전체를 문자열로 묶음 ' '
+const obj = JSON.parse(val); //객체를 제이슨으로 파싱
+document.write(obj.name);
+document.write(obj.tel);
+document.write(obj.age);
+document.write(obj.flag);
+</script>
+</body>
+</html>

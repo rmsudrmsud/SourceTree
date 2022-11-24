@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+<h3>kosta shop</h3>
+<table>
+<tr><td colspan="2" style="height:150px;background-color:yellow;font-size:60px;text-align:center">
+<img style="width:900px;" src="../img/coupang.png">
+</td></tr>
+<tr>
+<td style="width:150px;height:400px;background-color:orange;font-size:20px;text-align:center">
+전자<br/>
+의류<br/>
+간식<br/>
+애완<br/>
+</td>
+<td style="width:400px;height:400px">
+<table>
+<tr>
+<td><img src="../img/computer.jpg" style="width:100px;height:100px"></td>
+<td><img src="../img/phone.jpg" style="width:100px;height:100px"></td>
+<td><img src="../img/tv.jpg" style="width:100px;height:100px"></td>
+</tr>
+<tr>
+<td class="title"> 컴퓨터 <br/>가격:29000<br/>내일 도착 보장</td>
+<td class="title"> 폰 <br/>가격:29000<br/>내일 도착 보장</td>
+<td class="title"> tv <br/>가격:29000<br/>내일 도착 보장</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</body>
+</html>

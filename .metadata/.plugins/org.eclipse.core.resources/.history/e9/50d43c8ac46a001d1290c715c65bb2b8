@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h3>Dom 실습</h3>
+<img src="../img/dog.jpg" style="width:100px;height:100px"><br/>
+<table border="1">
+<tr>
+	<td class="tr1">aaa</td>
+	<td class="tr1">bbb</td>
+	<td class="tr1">ccc</td>
+</tr>
+<tr>
+	<td>ddd</td>
+	<td>eee</td>
+	<td>fff</td>
+</tr>
+</table><br/>
+<script>
+	alert(document.getElementsByTagName("h3"));
+</script>
+<div id="myDiv">div영역</div>
+</body>
+</html>
