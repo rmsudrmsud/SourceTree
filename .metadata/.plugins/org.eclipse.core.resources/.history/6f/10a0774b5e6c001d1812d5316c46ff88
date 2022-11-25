@@ -1,0 +1,16 @@
+@charset "UTF-8";
+
+.bannerInfo{
+	background-image: url("../project/netflix/banner1.jpg");
+	background-size:cover;
+}
+
+html,body {
+        width: 100%;
+        height: 100%;
+}
+.container {
+        width: 100%;
+        height: 100%;
+        background-color:pink;
+      }

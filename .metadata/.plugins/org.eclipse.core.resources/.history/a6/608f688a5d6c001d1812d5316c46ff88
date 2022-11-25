@@ -1,0 +1,7 @@
+@charset "UTF-8";
+
+.bannerInfo{
+	background-image: url("../project/netflix/banner1.jpg");
+	background-repeat:no-repeat;
+	background-size:contain;
+}

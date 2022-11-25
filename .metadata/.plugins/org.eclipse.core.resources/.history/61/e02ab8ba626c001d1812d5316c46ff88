@@ -1,0 +1,35 @@
+@charset "UTF-8";
+
+.bannerInfo{
+	background-image: url("../project/netflix/banner1.jpg");
+  background-size: cover;
+  background-position: center center;
+  object-fit: contain;
+  height: 100%;
+  color: white;
+}
+.infotext{
+	background-image: url("../project/netflix/info1.png");
+	background-repeat:no-repeat;
+	background-size:contain;
+	position : relative;
+	top:490px;
+	z-index:1;
+	height:300px;
+}
+html{
+        width: 100%;
+        height: 100%;
+}
+
+body{
+	width: 100%;
+    height: 100%;
+	margin:0;
+}
+
+.container {
+        width: 100%;
+        height: 100%;
+        background-color:black;
+      }

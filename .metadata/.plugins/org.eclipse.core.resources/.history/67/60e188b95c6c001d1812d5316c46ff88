@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>종이의집 정보 소개</title>
+</head>
+<body>
+<div class="InfoImg">아</div>
+<link rel="stylesheet" type="text/css" href="bannerStyle.css" />
+</body>
+</html>

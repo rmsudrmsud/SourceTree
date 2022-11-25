@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>상세정보 소개</title>
+<link rel="stylesheet" type="text/css" href="style.css" />
+<script>
+let title="";
+let img="";
+let img2="";
+
+onload = () => {
+	title = localStorage.getItem("title");
+	img = localStorage.getItem("img");
+	img2 = localStorage.getItem("img2");
+	
+	let titleDom = document.getElementById("title");
+	//titleDom.innerHTML = title;
+
+	document.img.src = img;
+	//document.img.src = img2;
+}
+</script>
+</head>
+<body>
+<div class="movieInfo">
+<div class="title"><h3>영화</h3></div>
+<div><img src="" name="img"></div>
+</div>
+</body>
+</html>

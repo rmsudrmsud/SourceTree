@@ -1,0 +1,8 @@
+@charset "UTF-8";
+
+.InfoImg{
+	background:url(../project/netflix/banner1.jpg) no repeat center center;
+	background-size: contain;
+  height: 448px;
+  color: white;
+}

@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<div class="InfoImg"></div>
+
+<link rel="stylesheet" type="text/css" href="style.css" />
+</body>
+</html>
