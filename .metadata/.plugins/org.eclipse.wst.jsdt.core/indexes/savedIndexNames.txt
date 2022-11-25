@@ -1,15 +1,11 @@
 INDEX VERSION 1.4+/Users/choigeunhyeong/Documents/Kosta/.metadata/.plugins/org.eclipse.wst.jsdt.core/indexes
-2012657057.index
-3163449393.index
-2386273226.index
-3330749792.index
-1030924651.index
-372036618.index
-2958783728.index
-1470191712.index
 4052784730.index
-999726195.index
-1630669027.index
-1586552802.index
+3163449393.index
 1597714448.index
-1233558891.index
+4052784730.index
+372036618.index
+1943404653.index
+2386273226.index
+1630669027.index
+1030924651.index
+999726195.index

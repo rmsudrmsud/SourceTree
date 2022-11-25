@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>엉성문고 - 상세페이지</title>
+<script>
+
+let title = "";
+let writer = "";
+let price = 0;
+let point = 0;
+let keyword = "";
+let img = "";
+window.onload = () => {
+	//localSorage에 담은값 꺼내기
+	title = localStorage.getItem("제목");
+	writer = localStorage.getItem("저자");
+	price = localStorage.getItem("가격");
+	point = localStorage.getItem("포인트");
+	keyword = localStorage.getItem("키워드");
+	img = localStorage.getItem("이미지");	
+	
+	let titledom = document.getElementById("title");
+	titleDom.innerHTML = title;
+	let writerdom = document.getElementById("writer");
+	writerDom.innerHTML = writer;
+	let pricedom = document.getElementById("price");
+	priceDom.innerHTML = price;
+	let pointdom = document.getElementById("point");
+	pointDom.innerHTML = point;
+	let keywordom = document.getElementById("keyword");
+	keywordDom.innerHTML = keyword;
+	document.img.src = img;
+}
+
+//이건 유지보수하기 좋게 prods에서 수정하기 좋게 ..가격 지정없이 
+const a = () => {
+	let amount = parseInt(f.amount.value);
+	let res = price*amount;
+	let resSpan = document.getElementById("res");
+	resSpan.innerHTML = res;
+}
+</script>
+</head>
+<body>
+<form name ="f">
+
+<table border="1">
+<tr><td rowspan="6"><span id="img"></span></td>
+<td>제목: <span id="title"></span></td>
+</tr>
+<tr>
+<td>저자: <span id="writer"></span></td>
+</tr>
+<tr>
+<td>가격: <span id="price"></span></td>
+</tr>
+<tr>
+<td>수량: <select name="amount" onChange="b()">
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+</select></td></tr>
+<tr>
+<td>키워드: <span id="keyword"></span></td>
+</tr>
+<tr>
+<td>결제금액: <span id="res"></span><br/>
+<input type="button" value="즉시결제">
+<input type="button" value="장바구니">
+</td>
+</tr>
+</table>
+
+</form>
+</body>
+</html>

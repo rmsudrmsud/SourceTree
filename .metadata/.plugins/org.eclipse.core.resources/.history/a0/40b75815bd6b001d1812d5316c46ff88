@@ -1,0 +1,14 @@
+@charset "UTF-8";
+
+.banner_image {
+  background-image: url(../project/netflix/banner.jpg);
+  background-size: cover;
+  background-position: center center;
+  object-fit: contain;
+  height: 448px;
+  color: white;
+}
+
+.banner_text{
+	color:white;
+}

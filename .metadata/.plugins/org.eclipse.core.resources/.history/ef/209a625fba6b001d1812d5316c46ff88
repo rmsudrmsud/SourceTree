@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script>
+let title="";
+let img="";
+let img2="";
+
+window.onload = ()=>{
+	title = localStorage.getItem("title");
+	titleDom.innerHTML = title;
+	img = localStorage.getItem("img");
+	imgDom.innerHTML = img;
+	img2 = localStorage.getItem("img2");
+	img2Dom.innerHTML = img2;
+	
+	document.img.src = img;
+}
+</script>
+
+<form name="f">
+<table border="1">
+<tr><th colspan="3"><span id="title"></span></th></tr>
+<tr><td rowspan="3"><img src="" name="img"></td>
+</tr>
+</table>
+</form>
+</body>
+</html>

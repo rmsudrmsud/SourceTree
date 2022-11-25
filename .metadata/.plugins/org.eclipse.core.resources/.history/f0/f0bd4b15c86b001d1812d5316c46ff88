@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+let movies = [{"title":"movie1","img":"../project/netflix/movie1.jpg"},
+	{"title":"movie2","img":"../project/netflix/movie2.jpg"},
+	{"title":"movie3","img":"../project/netflix/movie3.jpg"},
+	{"title":"movie4","img":"../project/netflix/movie4.jpg"},
+	{"title":"movie5","img":"../project/netflix/movie5.jpg"},
+	{"title":"movie6","img":"../project/netflix/movie6.jpg"},
+	{"title":"movie7","img":"../project/netflix/movie7.jpg"},
+	{"title":"movie8","img":"../project/netflix/movie8.jpg"},
+	{"title":"movie9","img":"../project/netflix/movie9.jpg"},
+	{"title":"movie10","img":"../project/netflix/movie10.jpg"}];
+	
+let cmovies = [{"title":"cmovie1","img":"../project/netflix/cmovie1.jpg"},
+	{"title":"cmovie2","img":"../project/netflix/cmovie2.jpg"},
+	{"title":"cmovie3","img":"../project/netflix/cmovie3.jpg"},
+	{"title":"cmovie4","img":"../project/netflix/cmovie4.jpg"},
+	{"title":"cmovie5","img":"../project/netflix/cmovie5.jpg"},
+	{"title":"cmovie6","img":"../project/netflix/cmovie6.jpg"},
+	{"title":"cmovie7","img":"../project/netflix/cmovie7.jpg"},
+	{"title":"cmovie8","img":"../project/netflix/cmovie8.jpg"},
+	{"title":"cmovie9","img":"../project/netflix/cmovie9.jpg"},
+	{"title":"cmovie10","img":"../project/netflix/cmovie10.jpg"}];
+	
+let imgs = ["large-movie1.jpg","large-movie2.jpg","large-movie3.jpg","large-movie4.jpg","large-movie5.jpg","large-movie6.jpg"]
+let cnt=0;
+
+const detail =(idx, num) => {
+	let obj = null;
+	if(num==1){
+		obj = movies[idx];	
+	}else if(num==2){
+		obj = cmovies[idx];
+	}else{
+		return;
+	}
+	localStorage.setItem("title", obj.title);
+	localStorage.setItem("img", obj.img);
+	//localStorage.setItem("img2", obj2.img);
+	location.href = "info.html";
+}
+
+const viewH =() =>{
+	document.Imgs.src ="../project/netflix/"+imgs[cnt%6];
+	cnt++;
+	window.setTimeout(viewH, 1000);	
+}
+
+window.onload = () =>{
+	viewH();
+}
+</script>
+</head>
+<body bgcolor="black">
+
+<div class="headImg"><img style="width:100px;heightL100px" src="../project/netflix/netflix.png"></div>
+<img name="Imgs" style="width:200px;" src="../proejct/netflix/large-movie1.jpg">
+<div class="banner">
+	<div class="banner_image"></div>
+	<div class="banner_text">
+	<p>지구의 안보가 위협당하는 위기의 상황에서 슈퍼히어로들을 불러모아 세상을 구하는, 일명 [어벤져스] 작전. 에너지원 ‘큐브’를 이용한 적의 등장으로 인류가 위험에 처하자 국제평화유지기구인 쉴드의 국장 닉 퓨리는 [어벤져스] 작전을 위해 전 세계에 흩어져 있던 슈퍼히어로들을 찾아나선다.
+	아이언맨부터 토르, 헐크, 캡틴 아메리카는 물론, 쉴드의 요원인 블랙 위도우, 호크 아이까지, 
+	최고의 슈퍼히어로들이 [어벤져스]의 멤버로 모이게 되지만, 각기 개성이 강한 이들의 만남은 예상치 못한 방향으로 흘러가는데… 지구의 운명을 건 거대한 전쟁 앞에 [어벤져스] 작전은 성공할 수 있을까?</p>	
+	</div>
+</div>
+<table>
+<tr><th style="color:white;">금주의 탑10 영화</th></tr>
+<script>
+	document.write("<tr>");
+	for(i=0;i<movies.length;i++){
+		let obj = movies[i];
+		document.write("<td>");
+		document.write("<img style='width:130px;height:120px;' src='"+obj.img+"' onclick='detail("+i+", 1)'><br/>");
+		document.write("</td>")
+	}
+	document.write("</tr>");
+</script>
+<tr><th style="color:white">청룡 영화제 수상영화</th></tr>
+<script>
+	document.write("<tr>");
+	for(i=0;i<cmovies.length;i++){
+		let obj = cmovies[i];
+		document.write("<td>");
+		document.write("<img style='width:130px;height:120px;' src='"+obj.img+"' onclick='detail("+i+", 2)'><br/>");
+		document.write("</td>")
+	}
+	document.write("</tr>");
+</script>
+<!-- <tr>
+	<td>오늘의 탑10 영화</td>
+</tr>
+<tr>
+	<td><img style="width:130px;height:100px;" src="../project/netflix/movie1.jpg" onclick="detail()"></td>
+	<td><img style="width:130px;height:100px;" src="../project/netflix/movie2.jpg" onclick="detail()"></td>
+	<td><img style="width:130px;height:100px;" src="../project/netflix/movie3.jpg" onclick="detail()"></td>
+	<td><img style="width:130px;height:100px;" src="../project/netflix/movie4.jpg" onclick="detail()"></td>
+	<td><img style="width:130px;height:100px;" src="../project/netflix/movie5.jpg" onclick="detail()"></td>
+	<td><img style="width:130px;height:100px;" src="../project/netflix/movie6.jpg" onclick="detail()"></td>
+	<td><img style="width:130px;height:100px;" src="../project/netflix/movie7.jpg" onclick="detail()"></td>
+	<td><img style="width:130px;height:100px;" src="../project/netflix/movie8.jpg" onclick="detail()"></td>
+	<td><img style="width:130px;height:100px;" src="../project/netflix/movie9.jpg" onclick="detail()"></td>
+	<td><img style="width:130px;height:100px;" src="../project/netflix/movie10.jpg" onclick="detail()"></td>
+</tr>
+<tr>
+	<td>청룡 영화상 수상작</td>
+</tr>
+<tr>
+	<td><img style="width:130px;height:100px;" src="../project/netflix/cmovie1.jpg" onclick="detail()"></td>
+	<td><img style="width:130px;height:100px;" src="../project/netflix/cmovie2.jpg" onclick="detail()"></td>
+	<td><img style="width:130px;height:100px;" src="../project/netflix/cmovie3.jpg" onclick="detail()"></td>
+	<td><img style="width:130px;height:100px;" src="../project/netflix/cmovie4.jpg" onclick="detail()"></td>
+	<td><img style="width:130px;height:100px;" src="../project/netflix/cmovie5.jpg" onclick="detail()"></td>
+	<td><img style="width:130px;height:100px;" src="../project/netflix/cmovie6.jpg" onclick="detail()"></td>
+	<td><img style="width:130px;height:100px;" src="../project/netflix/cmovie7.jpg" onclick="detail()"></td>
+	<td><img style="width:130px;height:100px;" src="../project/netflix/cmovie8.jpg" onclick="detail()"></td>
+	<td><img style="width:130px;height:100px;" src="../project/netflix/cmovie9.jpg" onclick="detail()"></td>
+	<td><img style="width:130px;height:100px;" src="../project/netflix/cmovie10.jpg" onclick="detail()"></td>
+</tr> -->
+</table>
+	<link rel="stylesheet" type="text/css" href="style.css" />
+</body>
+</html>

@@ -1,0 +1,28 @@
+@charset "EUC-KR";
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&display=swap');
+body{ 
+	font-family: 'Nanum Myeongjo', serif;
+	}
+	
+select{ 
+    text-align: center;
+    font-family: 'Nanum Myeongjo', serif;
+}
+
+/* input[type=text]{
+  font-family: 'Nanum Myeongjo', serif;
+  font-size: 15px;
+  text-align: center;
+  };
+   */
+.topBar{
+	background-image: url("../img/dog.jpg"); 
+}
+
+.topBar_text{
+  width: 500px;
+    height: 500px;
+    border: solid;
+}
+
+  

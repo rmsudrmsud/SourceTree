@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>☆우당탕탕엉성문고☆</title>
+<script>
+ 
+//헤드이미지배열
+let ebookHead = ["ebook_head1.jpg","ebook_head2.jpg", "ebook_head3.jpg","ebook_head4.jpg", "ebook_head5.jpg"];
+let cnt =0;
+
+let prods = [{"제목": "[인간들의 가장 은밀한 기억]", "저자": "모하메드 음부가르 사르", "가격": "16920", "포인트": "940", "키워드": "#2021 공쿠르상 수상작", "이미지" : "../img/book1.jpg"},
+	{"제목": "[나이트 러닝]", "저자": "이지", "가격": "13500", "포인트": "750", "키워드": "#제7회 중앙장편문학상 석권", "이미지" : "../img/book2.jpg"},
+	{"제목": "[언러키 스타트업]", "저자": "정지음", "가격": "13500", "포인트": "750", "키워드": "#스타트업의 웃픈 현실", "이미지" : "../img/book3.jpg"},
+	{"제목": "[세 번째 장례]", "저자": "윤이안", "가격": "15120", "포인트": "840", "키워드": "#경향신문 신춘문예 등단 작가", "이미지" : "../img/book4.jpg"},
+	{"제목": "[빈 옷장]", "저자": "아니 에르노", "가격": "13050", "포인트": "720", "키워드": "#2022 노벨문학상 수상", "이미지" : "../img/book5.jpg"},
+	{"제목": "[락다운]", "저자": "피터 메이", "가격": "15300", "포인트": "850", "키워드": "#최고의 서스펜스 스릴러", "이미지" : "../img/book6.jpg"},
+	{"제목": "[존재의 3가지 거짓말]", "저자": "아고타 그리스토프", "가격": "19800", "포인트": "1100", "키워드": "#철학자 슬라보예 지젝 추천", "이미지" : "../img/book7.jpg"},
+	{"제목": "[인사이트 밀]", "저자": "요네자와 호노부", "가격": "16650", "포인트": "920", "키워드": "# 7일간의 데스 매치", "이미지" : "../img/book8.jpg"},
+	{"제목": "[0125]", "저자": "케이시", "가격": "12420", "포인트": "690", "키워드": "#픽사보다 더 픽사같다", "이미지" : "../img/book9.jpg"},
+	{"제목": "[나는 실수로 투명인간을 죽였다]", "저자": "경민선", "가격": "13050", "포인트": "720", "키워드": "#제1회K-미스터리 최우수작", "이미지" : "../img/book10.jpg"}];
+
+//통합검색창 배열
+let cateinfo = ['통합검색','국내도서','해외도서','e-Book','웹소설/코믹','CD/LP'];
+
+//헤드롤링
+const ebookViewH =()=>{
+	document.ebookHead.src = "../img/"+ebookHead[cnt%5];
+	cnt++;
+	setTimeout(ebookViewH, 900);
+}
+
+
+window.onload =()=> {
+	ebookViewH();
+	//통합검색 select박스 구현
+	let sel1 = document.getElementById("sell");
+	let txt ="";
+	for(i=0; i<cateinfo.length; i++){
+		txt += "<option value="+i+">"+cateinfo[i]+"</option>";
+	}  
+	sell.innerHTML =txt;
+}
+
+const show = (num) => {
+	let showDiv = document.getElementById("cate_"+num);
+	showDiv.style.display = '';
+
+}
+
+const hide = (num) => {
+	let showDiv = document.getElementById("cate_"+num);
+	showDiv.style.display = 'none';
+}
+
+const detail = (idx) => {	
+	let obj = prods[idx];
+	localStorage.setItem("제목", obj.제목);
+	localStorage.setItem("저자", obj.저자);
+	localStorage.setItem("가격", obj.가격);
+	localStorage.setItem("포인트", obj.포인트);
+	localStorage.setItem("키워드", obj.키워드);
+	localStorage.setItem("이미지", obj.이미지);
+	//자바스크립트에서 페이지 이동
+	location.href = "detail1.html";
+}
+
+
+</script>
+</head>
+
+<body>
+<div class="topBar_image">국내 도서<div class="topBar_text">
+	<p>국내도서</p>	
+</div>
+</div>
+<table border="1">
+<tr>  
+	<td>엉성문고</td>
+	<td><select style="font-size: 16px;" id="sell" name="sell"></select>
+	<input type = "text" value= "검색명을 입력해주세요." name= "searchval"><input type = "button" style="width:50px; height:30px;" value="검색" onclick = "alert('입력한 키워드로 검색된 정보가 없습니다.');"></td>
+	
+</tr>
+<tr> 
+	<td colspan="2" style="height: 150px;"><img name="ebookHead" style="width: 1280px;" src="../img/ebook_head1.jpg"></td>
+</tr>
+<tr>
+	<td style= "width: 150px; height: 400px; font-size: 25px; text-align: center">
+	<span onmouseover="show(0)" onmouseout="hide(0)">국내도서</span><br/>
+	<div id="cate_0" style="display: none; font-size: 13px; color: orange"><strong>소설/시<br />인문/사회<br />경제/경영<br />예술/문화</strong><br/></div> 
+	<span onmouseover="show(1)" onmouseout="hide(1)"><br />해외도서</span><br/>
+	<div id="cate_1" style="display: none; font-size: 13px; color: orange"><strong>프랑스도서<br />중국도서<br />일본도서<br />해외잡지</strong><br/></div>
+	<span onmouseover="show(2)" onmouseout="hide(2)"><br />e-book</span><br/>
+	<div id="cate_2" style="display: none; font-size: 13px; color: orange"><strong>인문/사회<br />자기계발/참고서<br />가정/취미<br />역사/종교</strong><br/></div>
+	<span onmouseover="show(3)" onmouseout="hide(3)"><br />웹소설/코믹</span><br/>
+	<div id="cate_3" style="display: none; font-size: 13px; color: orange"><strong>로맨스<br />판타지<br />무협<br />드라마<br/>액션</strong><br/></div>
+	<span onmouseover="show(4)" onmouseout="hide(4)"><br />CD/LP</span><br/>
+	<div id="cate_4" style="display: none; font-size: 13px; color: orange"><strong>로맨스<br />가요<br />POP/ROCK<br />클래식/JAZZ<br />종교음악<br />OST	</strong><br/></div>
+	</td>
+	<!--책 리스트-->
+	<td style= "width: 600px; height: 600px;"><h3>화제의 신작   ></h3>
+	<table border="1">
+    <script>
+		for(i=0;i<prods.length;i++){
+			let obj = prods[i]
+			if(i%5==0){ 
+				document.write("<tr>");
+			}
+	
+	document.write("<td>");
+	document.write("<img src='"+obj.이미지+"' onclick='detail("+i+")'><br/>");
+	document.write("<strong>"+obj.제목+"</strong><br/>");
+	document.write(obj.저자+"<br/>");
+	document.write(obj.가격+"<br/>");
+	document.write(obj.포인트+"<img style= 'width: 13px; height:13px' src='../img/p.png'>"+"<br/>");
+	document.write("<span style ='color: gray'>"+"<strong>"+obj.키워드+"</strong></span><br/>");
+	document.write("<img style= 'width: 217px; height:5px' src='../img/line.png'>");
+	document.write("</td>");
+
+	if(i%5==4){ 
+		document.write("</tr>");
+	}
+}
+</script>
+</table>
+</td>
+</tr>
+</table>
+<link rel="stylesheet" type="text/css" href="ebook_style.css" />
+
+</body>
+</html>
