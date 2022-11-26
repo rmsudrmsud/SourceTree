@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <title>넷플릭스 클론연습</title>
 <script>
-let movies = [{"title":"movie1","img":"../project/netflix/large-movie1.jpg"},
+/* let movies = [{"title":"movie1","img":"../project/netflix/large-movie1.jpg"},
 	{"title":"movie2","img":"../project/netflix/large-movie2.jpg"},
 	{"title":"movie3","img":"../project/netflix/large-movie3.jpg"},
 	{"title":"movie4","img":"../project/netflix/large-movie4.jpg"},
@@ -20,9 +20,9 @@ let cmovies = [{"title":"cmovie1","img":"../project/netflix/cmovie1.jpg"},
 	{"title":"cmovie5","img":"../project/netflix/cmovie5.jpg"},
 	{"title":"cmovie6","img":"../project/netflix/cmovie6.jpg"},
 	{"title":"cmovie7","img":"../project/netflix/cmovie7.jpg"},
-	{"title":"cmovie8","img":"../project/netflix/cmovie8.jpg"}];
+	{"title":"cmovie8","img":"../project/netflix/cmovie8.jpg"}]; */
 	
-const detail =(idx, num) => {
+/* const detail =(idx, num) => {
 	let obj = null;
 	if(num==1){
 		obj = movies[idx];	
@@ -35,35 +35,112 @@ const detail =(idx, num) => {
 	localStorage.setItem("img", obj.img);
 	//localStorage.setItem("img2", obj2.img);
 	location.href = "info.html";
-}
+} */
 
 const bannerInfo =() =>{
 	location.href= "bannerInfo.html";
 }
 
-const btn = () => {
-	
+const tenmovie1 =() =>{
+	location.href="tenmovie1.html";
+}
+const tenmovie2 =() =>{
+	location.href="tenmovie2.html";
+}
+const tenmovie3 =() =>{
+	location.href="tenmovie3.html";
+}
+const tenmovie4 =() =>{
+	location.href="tenmovie4.html";
+}
+const tenmovie5 =() =>{
+	location.href="tenmovie5.html";
+}
+const tenmovie6 =() =>{
+	location.href="tenmovie6.html";
+}
+const tenmovie7 =() =>{
+	location.href="tenmovie7.html";
+}
+const tenmovie8 =() =>{
+	location.href="tenmovie8.html";
+}
+
+const cmovie1 =() =>{
+	location.href="cmovie1.html";
+}
+const cmovie2 =() =>{
+	location.href="cmovie2.html";
+}
+const cmovie8 =() =>{
+	location.href="cmovie8.html";
 }
 </script>
 </head>
 <body bgcolor="black">
-<!-- <div class="mImgs"><img name="Imgs" style="width:600px;height:300px;" src="../proejct/netflix/large-movie1.jpg"></div> -->
+<!-- 배너이미지, 링크 -->
 <div class="banner">
-	<div class="headImg" id="headImg"><img style="width:100px;height:70px;" src="../project/netflix/netflix-logo.png"></div>
-	<div class="icon" id="headImg"><img style="width:50px;height:50px;" src="../project/netflix/netflix-icon.png"></div>
-	<div class="banner_image"  onclick="bannerInfo()">
-	<div class="banner_head"><h1>종이의 집</h1><div class="button">장르: <select name="button">
-	<option value="액션">액션</option>
-	<option value="범죄">범죄</option>
-	<option value="어워드수상">어워드수상</option>
-	</select></div>
+	<!-- 로고 --> 
+	<div class="banner_image"  onclick="bannerInfo()"> 
+		<div class="nav" style="display: flex; justify-content: space-between;">
+		<div class="headImg" id="headImg">
+			<img style="width:100px;height:50px;" src="../project/netflix/netflix-logo.png">
+		</div>
+		<div class="icon" id="headImg">
+			<img style="width:50px;height:50px;" src="../project/netflix/netflix-icon.png">
+		</div>
+	</div>
+	<div class="banner_head"><h1>종이의 집</h1>
 	</div>
 	<div class="banner_text">
-	<p>1명의 천재, 8명의 공범. 철저히 준비한 세기의 강도. 스페인 조폐국에서 인질극까지 벌인 이들은 과연 포위경찰을 따돌리고 거액의 돈과 함께 도망칠수 있을까?</p>	
+	1명의 천재, 8명의 공범. 철저히 준비한 세기의 강도. 스페인 조폐국에서 인질극까지 벌인 이들은 과연 포위경찰을 따돌리고 거액의 돈과 함께 도망칠수 있을까?
 	</div>
 	</div>
 </div>
-<table>
+<!-- 탑8영화 -->
+<div class="movie">
+	<div class="tenmovie" style="color:white;">&nbsp;&nbsp;금주의 탑8 영화</div>
+	<div class="tenmovieposter">
+	<img src="../project/netflix/large-movie1.jpg"
+	alt="" class="movieposter" onclick="tenmovie1()">
+	<img src="../project/netflix/large-movie2.jpg"
+	alt=""
+	class="movieposter" onclick="tenmovie2()">
+	<img src="../project/netflix/large-movie3.jpg"
+	alt=""
+	class="movieposter" onclick="tenmovie3()">
+	<img src="../project/netflix/large-movie4.jpg"
+	alt=""
+	class="movieposter" onclick="tenmovie4()">
+	<img src="../project/netflix/large-movie5.jpg"
+	alt=""
+	class="movieposter" onclick="tenmovie5()">
+	<img src="../project/netflix/large-movie6.jpg"
+	alt=""
+	class="movieposter" onclick="tenmovie6()">
+	<img src="../project/netflix/large-movie7.jpg"
+	alt=""
+	class="movieposter" onclick="tenmovie7()">
+	<img src="../project/netflix/large-movie8.jpg"
+	alt=""
+	class="movieposter" onclick="tenmovie8()">
+	</div>
+	<!-- 청룡영화제 -->
+	<div class="cmovie" style="color:white;">&nbsp;&nbsp;청룡 영화제 수상영화
+	<div class="cmovieposter">
+	<img src="../project/netflix/cmovie1.jpg" alt="" class=movieposters onclick="cmovie1();">
+	<img src="../project/netflix/cmovie2.jpg" alt="" class=movieposters onclick="cmovie2();">
+	<img src="../project/netflix/cmovie3.jpg" alt="" class=movieposters>
+	<img src="../project/netflix/cmovie4.jpg" alt="" class=movieposters>
+	<img src="../project/netflix/cmovie5.jpg" alt="" class=movieposters>
+	<img src="../project/netflix/cmovie6.jpg" alt="" class=movieposters>
+	<img src="../project/netflix/cmovie7.jpg" alt="" class=movieposters>
+	<img src="../project/netflix/cmovie8.jpg" alt="" class=movieposters onclick="cmovie8();">
+	</div>
+	</div>
+	</div>
+	
+<!-- <table>
 <tr><th style="color:white;">금주의 탑10 영화</th></tr>
 <script>
 	document.write("<tr>");
@@ -85,7 +162,7 @@ const btn = () => {
 		document.write("</td>")
 	}
 	document.write("</tr>");
-</script>
+</script> -->
 </table>
 	<link rel="stylesheet" type="text/css" href="style.css" />
 </body>

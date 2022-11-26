@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>종이의집 정보 소개</title>
+<link rel="stylesheet" type="text/css" href="bannerStyle.css" />
+</head>
+<body>
+<script>
+const comback = () => {
+	location.href= "netflixclone.html";
+}
+</script>
+<div class="container">
+<div class="bannerInfo">
+<div class="button" >
+	<input type="button" class="btn" value="NetFlix" onclick="comback()">
+</div>
+	<div class="infotext">
+	<p><h2>종이의집 상세정보</h2></p>
+	<span style="font-weight:800; color:gold;">크리에이터</span> : <span>알렉스 피나<br/></span>
+	<span style="font-weight:800; ">출연</span> : <span>우르술라 코르베로, 알바로 모르테,이치아르 이투뇨, 페드로 알론소, 미겔 에란, 하이메 로렌테, 에스테르 아세보, 다르코 페리치, 호비크 케우치케리안, 루카 페로시, 벨렌쿠에스타,
+	페르난도 카요, 로드리고 데라세르나, 나지와 남리, 페르난도 소토, 마리오 데 라 로사, 안토니오 로메로, 미겔 부스타만데, 호세 마누엘 세다, 라몬 아히레, 알바 플로레스, 엔리케 아르세,
+	파트리크 크리아도, 디아나 고메스, 미겔 앙헬 실베스트레, 파코 토우스, 호세 마누엘 포가, 키티 만베르, 마리아 페드라사<br/><br/></span>
+	<span style="font-weight:800; color:red;">장르</span> : <span>범죄시리즈, 스페인작품, 스릴러시리즈<br/><br/></span>
+	<span style="font-weight:800;">시리즈 특징</span> : <span>긴장감 넘치는, 흥미진진<br/></span>
+	<span style="font-weight:800;">관람등급</span> : <span>청소년 관람 불가<br/></span>
+	</div>
+</div>
+</div>
+</body>
+</html>
