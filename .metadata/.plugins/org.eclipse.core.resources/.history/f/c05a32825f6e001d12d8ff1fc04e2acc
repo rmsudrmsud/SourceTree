@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+//헤드 이미지 배열에 저장
+let headImgs =["locket.jpg","head1.jpg"] //롤링할 파일 나열
+let cnt = 0;
+
+//상품 객체를 담은 배열 중괄호가 객체 즉  객체 3개 {멤버변수:값} in js}
+let prods = [{"title":"��ǻ��", "price":2900000, "info":"���ϵ�������", "img":"../img/computer.jpg"},
+	{"title":"��", "price":1000000, "info":"���ϵ�������", "img":"../img/phone.jpg"},
+	{"title":"tv", "price":2900000, "info":"���ϵ�������", "img":"../img/tv.jpg"},
+	{"title":"��", "price":290000, "info":"11��23�ϵ�������", "img":"../img/dog.jpg"},
+	{"title":"��2", "price":290000, "info":"���ϵ�������", "img":"../img/dog2.jpg"},
+	{"title":"��3", "price":290000, "info":"���ϵ�������", "img":"../img/dog3.jpg"}]
+
+//헤드이미지 롤링하려고 만든 함수
+const viewH =() =>{
+	document.headImg.src ="../img/head/"+headImgs[cnt%2];
+	//이미지가 3개니깐 첫화면으로 다시돌아가기위해[0]
+	//headimg의 src값으로. 경로+ [cnt%2] 이미지가 2개니까 2개가지나면 0으로돌아오라고 6개면 cnt%6
+	cnt++;
+	window.setTimeout(viewH, 1000); //(window).seTimeout
+	//setTimeout(a,b); 파람1: a함수를 호출, 파람2: b 시간 지난후에.
+	//반복되는 이유는 viewH함수안에 setTimeout에서 또 호출해서...
+}
+
+//이게 없으면 그림이 안돌아감
+//onload: onclick이랑 동일하게 핸들러의 종류중 하나 
+//load-> 페이지 로드되자마자 실행
+window.onload = () =>{ //익명함수 
+	viewH();
+}
+//메뉴바에 커서 올리면 보이도록
+const show = (num) => {
+	let showDiv = document.getElementById("cate_"+num);
+	showDiv.style.display = '';
+	//위 실행문을 거치면 display의 none 을 ''으로만들어서 보이도록해줌
+}
+//메뉴바에 커서 벗어나면 원래대로
+const hide = (num) => {
+	let showDiv = document.getElementById("cate_"+num);
+	showDiv.style.display = 'none';
+}
+
+const detail = (idx) =>{
+	let obj = prods[idx];
+	//localStorage:저장객체. 페이지 이동시 데이터 전달(이동하면 싹 다 날라가서)
+	//setItem(키, 값): localStorage에 값 저장
+	//getItem(키): 키로 값 꺼냄
+	//removeItem(키): 키로 찾아서 삭제
+	localStorage.setItem("title", obj.title);
+	localStorage.setItem("price", obj.price);
+	localStorage.setItem("info", obj.info);
+	localStorage.setItem("img", obj.img);
+	//자바스크립트에서 페이지 이동
+	location.href = "detail.html";
+}
+</script>
+</head>
+<body>
+<h3>kosta shop</h3>
+<table>
+<tr><td colspan="2" style="height:150px;background-color:white;font-size:60px;text-align:center">
+<img name="headImg" style="width:700px;" src="../img/head/locket.jpg"> <!--�̸� headimg -->
+</td></tr>
+<tr> <!-- ���콺�� �ø��� �����޴��� ���̵��� �ϱ����� �ڵ� -->
+<td style="width:150px;height:400px;background-color:orange;font-size:20px;text-align:center">
+<span onmouseover="show(0)" onmouseout="hide(0)">����</span><br/> <!-- �Ķ���ͷ� ī�װ��� ��ȣ -->
+<div id="cate_0" style="display:none;font-size:10px;color:red;" >��Ʈ�� / ����� / ��Ź��</div>
+<span onmouseover="show(1)" onmouseout="hide(1)">�Ƿ�</span><br/>
+<div id="cate_1" style="display:none;font-size:10px; color:red;" >�Ƶ��� / ������ / ������</div>
+<span onmouseover="show(2)" onmouseout="hide(2)">����</span><br/>
+<div id="cate_2" style="display:none;font-size:10px;color:rgb(52, 64, 233);" >���� / ��Ű / ����</div>
+<span onmouseover="show(3)" onmouseout="hide(3)">�ֿ�</span><br/>
+<div id="cate_3" style="display:none;font-size:10px; color:red;" >�峭�� / ���� / ���</div>
+</td>
+<td style="width:400px;height:400px">
+<table>
+<script>
+//��ĭ���� �迭�� ���� �� �ٸ��⶧���� ��ũ��Ʈ�� ������� 6ĭ���� ��ǰ�Ѹ���
+for(i=0;i<prods.length;i++){
+	//i�� ���� ��ǰ ��ü
+	let obj = prods[i]; //obj.title, obj.price, obj.img, obj.info
+	if(i%3==0){ //0,1,2�� 3,4,5,���ٹ� ���������
+		document.write("<tr>");
+	}
+	
+	document.write("<td>");
+	document.write("<img style='width:100px;height:100px;' src='"+obj.img+"' onclick='detail("+i+")'><br/>"); //Ŭ���� detail�Լ� ���ȣ i
+	document.write(obj.title+"<br/>");
+	document.write(obj.price+"<br/>");
+	document.write(obj.info+"<br/>");
+	//document.write("<img style='width:100px;height:100px;' src='"+prods[i].img+"' onclick='detail("+i+")'><br/>"); //Ŭ���� detail�Լ� ���ȣ i
+	//document.write(prods[i].title+"<br/>");
+	//document.write(prods[i].price+"<br/>");
+	//document.write(prods[i].info+"<br/>");
+	//document.write("</td>");
+	
+	if(i%3==2){//0,1,2�� 3,4,5,���ٹ� ��������� 2����, 5���濡�� �ٴݾƾ��� ��Ģ����
+		document.write("</tr>");
+	}
+	
+}
+</script>
+<!-- <tr>
+<td><a href="detail.html"><img src="../img/computer.jpg" style="width:100px;height:100px"></a></td>
+<td><img src="../img/phone.jpg" style="width:100px;height:100px"></td>
+<td><img src="../img/tv.jpg" style="width:100px;height:100px"></td>
+</tr>
+<tr>
+<td class="title"> ��ǻ�� <br/>����:2900000<br/>���� ���� ����</td>
+<td class="title"> �� <br/>����:1000000<br/>���� ���� ����</td>
+<td class="title"> tv <br/>����:2900000<br/>���� ���� ����</td>
+</tr> -->
+</table>
+</td>
+</tr>
+</table>
+</body>
+</html>
