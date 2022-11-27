@@ -16,7 +16,6 @@ body{
     height: 100%;
 	margin:0;
 }
-
 .playbutton{
 	position:relative;
 }
@@ -43,6 +42,7 @@ body{
   color: white;
   
 }
+ 
 .LuciferInfo{
 	background-image: url("../project/netflix/large-movie2.jpg");
   background-size: contain;
@@ -127,10 +127,9 @@ body{
 .infotext{
 	width: 400px;
 	position:relative;
-	top:150px;
+	top: 50px;
 	left:50px;
 }
-
 .container {
   width: 100%;
   height: 100%;
@@ -138,13 +137,10 @@ body{
 }
 .gra{
   height:100%;
-  width:70%;
-  background: linear-gradient(
-    to left,
-    transparent,
-    rgba(37, 37, 37, 0.61),
-    #111
-  );
+  width: 70%;
+   background: linear-gradient(
+    to left, transparent, rgba(37, 37, 37, 0.61),#111
+  )
 }
 .button{
 	position:relative;
