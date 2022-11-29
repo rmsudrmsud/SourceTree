@@ -6,8 +6,9 @@
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
-		<item key="selection" value="sc.next"/>
+		<item key="selection" value="Member"/>
 		<list key="findhistory">
+			<item value="member"/>
 			<item value="sc.next"/>
 			<item value="sc"/>
 			<item value="package sports;"/>

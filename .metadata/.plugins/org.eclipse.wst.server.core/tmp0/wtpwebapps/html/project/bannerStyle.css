@@ -16,6 +16,7 @@ body{
     height: 100%;
 	margin:0;
 }
+
 .playbutton{
 	position:relative;
 }
@@ -24,8 +25,9 @@ body{
   margin-top:100px;
   left:50px;
 }
+
 .bannerInfo{
-	background-image: url("../project/netflix/banner1.jpg");
+	background-image: url("netflix/banner1.jpg");
   background-size: cover;
   background-position: center center;
   object-fit: contain;
@@ -34,7 +36,7 @@ body{
 }
 
 .LuisInfo{
-	background-image: url("../project/netflix/large-movie1.jpg");
+	background-image: url("netflix/large-movie1.jpg");
   background-size: contain;
   background-repeat : no-repeat;
   background-position: center center;
@@ -44,7 +46,7 @@ body{
 }
  
 .LuciferInfo{
-	background-image: url("../project/netflix/large-movie2.jpg");
+	background-image: url("netflix/large-movie2.jpg");
   background-size: contain;
   background-repeat : no-repeat;
   background-position: center center;
@@ -52,7 +54,7 @@ body{
   color: white;
 }
 .HauntedInfo{
-	background-image: url("../project/netflix/large-movie3.jpg");
+	background-image: url("netflix/large-movie3.jpg");
   background-size: contain;
   background-repeat : no-repeat;
   background-position: center center;
@@ -60,7 +62,7 @@ body{
   color: white;
 }
 .SaraInfo{
-	background-image: url("../project/netflix/large-movie4.jpg");
+	background-image: url("netflix/large-movie4.jpg");
   background-size: contain;
   background-repeat : no-repeat;
   background-position: center center;
@@ -68,7 +70,7 @@ body{
   color: white;
 }
 .CobraInfo{
-	background-image: url("../project/netflix/large-movie5.jpg");
+	background-image: url("netflix/large-movie5.jpg");
   background-size: contain;
   background-repeat : no-repeat;
   background-position: center center;
@@ -76,7 +78,7 @@ body{
   color: white;
 }
 .EliteInfo{
-	background-image: url("../project/netflix/large-movie6.jpg");
+	background-image: url("netflix/large-movie6.jpg");
   background-size: contain;
   background-repeat : no-repeat;
   background-position: center center;
@@ -84,7 +86,7 @@ body{
   color: white;
 }
 .TransInfo{
-	background-image: url("../project/netflix/large-movie7.jpg");
+	background-image: url("netflix/large-movie7.jpg");
   background-size: contain;
   background-repeat : no-repeat;
   background-position: center center;
@@ -92,7 +94,7 @@ body{
   color: white;
 }
 .UmbrellaInfo{
-	background-image: url("../project/netflix/large-movie8.jpg");
+	background-image: url("netflix/large-movie8.jpg");
   background-size: contain;
   background-repeat : no-repeat;
   background-position: center center;
@@ -101,7 +103,7 @@ body{
 }
 
 .InsiderInfo{
-	background-image: url("../project/netflix/cmovie1.jpg");
+	background-image: url("netflix/cmovie1.jpg");
   background-size: contain;
   background-repeat : no-repeat;
   background-position: center center;
@@ -109,7 +111,7 @@ body{
   color: white;
 }
 .BlackpriestInfo{
-	background-image: url("../project/netflix/cmovie8.jpg");
+	background-image: url("netflix/cmovie8.jpg");
   background-size: contain;
   background-repeat : no-repeat;
   background-position: center center;
@@ -117,7 +119,7 @@ body{
   color: white;
 }
 .NewWorldInfo{
-  background-image: url("../project/netflix/cmovie2.jpg");
+  background-image: url("netflix/cmovie2.jpg");
   background-size: contain;
   background-repeat : no-repeat;
   background-position: center center;
