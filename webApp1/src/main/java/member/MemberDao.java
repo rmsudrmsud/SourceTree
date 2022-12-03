@@ -17,7 +17,7 @@ public class MemberDao {
 	}
 
 	public void insert(MemberVo vo) {
-		String sql = "insert into member1 values(?,?,?,?)";
+		String sql = "insert into member1 values(?,?,?,?,?)";
 		Connection conn = dbconn.conn();
 		try {
 			PreparedStatement pstmt = conn.prepareStatement(sql);
@@ -25,6 +25,7 @@ public class MemberDao {
 			pstmt.setString(2, vo.getPwd());
 			pstmt.setString(3, vo.getName());
 			pstmt.setString(4, vo.getEmail());
+			pstmt.setInt(5, vo.getType());
 			pstmt.executeUpdate();
 		} catch (SQLIntegrityConstraintViolationException e) {
 			System.out.println("중복된 아이디. 다시 입력하시오");
@@ -55,7 +56,7 @@ public class MemberDao {
 			
 			if(rs.next()) {
 				vo = new MemberVo(rs.getString(1), rs.getString(2), 
-						rs.getString(3), rs.getString(4));
+						rs.getString(3), rs.getString(4), rs.getInt(5));
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -123,7 +124,7 @@ public class MemberDao {
 			PreparedStatement pstmt = conn.prepareStatement(sql);
 			rs = pstmt.executeQuery();
 			while (rs.next()) {
-				list.add(new MemberVo(rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4)));
+				list.add(new MemberVo(rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getInt(5)));
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block

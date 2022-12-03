@@ -15,7 +15,7 @@ public class ProductService {
 	}
 	
 	public ProductVo getByNum(int num) {
-		return dao.selectNum(num);
+		return dao.selectByNum(num);
 	}
 	
 	public ArrayList<ProductVo> getByName(String name){
@@ -36,5 +36,9 @@ public class ProductService {
 	
 	public void delProduct(int num) {
 		dao.delete(num);
+	}
+	
+	public ArrayList<ProductVo> getBySeller(String seller){
+		return dao.selectBySeller(seller);
 	}
 }

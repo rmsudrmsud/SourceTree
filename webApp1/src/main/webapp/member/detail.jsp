@@ -13,5 +13,9 @@ id:${vo.id }<br/>
 pwd:${vo.pwd }<br/>
 name:${vo.name }<br/>
 email:${vo.email }<br/>
+type:
+<c:if test="${vo.type==1 }">구매자</c:if>
+<c:if test="${vo.type==2 }">판매자</c:if>
+<br/>
 </body>
 </html>

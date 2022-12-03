@@ -12,8 +12,9 @@
 <form action="/webApp1/product/add" method="post">
 <table border="1">
 <tr><th>상품이름</th><td><input type="text" name="name"></td></tr>
-<tr><th>가격</th><td><input type="text" name="price"></td></tr>
-<tr><th>수량</th><td><input type="text" name="amount"></td></tr>
+<tr><th>가격</th><td><input type="number" name="price"></td></tr>
+<tr><th>수량</th><td><input type="number" name="amount"></td></tr>
+<tr><th>판매자</th><td><input type="text" name="seller" value="${sessionScope.loginId}" readonly></td></tr>
 <tr><th>저장</th><td><input type="submit" value="작성"></td></tr>
 </table>
 </form>

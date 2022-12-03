@@ -7,23 +7,24 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 import dbconn.DBConnect;
+import guestbook.GuestBookVo;
 
 public class ProductDao {
-	
 	private DBConnect dbconn;
-	
-	public ProductDao () {
+
+	public ProductDao() {
 		dbconn = DBConnect.getInstance();
 	}
-	//제품등록
-	public void insert(ProductVo vo){
-		String sql = "insert into Product values(seq_product.nextval,?,?,?)";
+
+	public void insert(ProductVo vo) {
+		String sql = "insert into product values(seq_product.nextval,?,?,?,?)";
 		Connection conn = dbconn.conn();
 		try {
 			PreparedStatement pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, vo.getName());
 			pstmt.setInt(2, vo.getPrice());
 			pstmt.setInt(3, vo.getAmount());
+			pstmt.setString(4, vo.getSeller());
 			pstmt.executeUpdate();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -37,12 +38,12 @@ public class ProductDao {
 			}
 		}
 	}
-	//번호로검색
-	public ProductVo selectNum(int num){
+
+	public ProductVo selectByNum(int num) {
 		ProductVo vo = null;
 		ResultSet rs = null;
 
-		String sql = "select * from Product where num=?";
+		String sql = "select * from product where num=?";
 		Connection conn = dbconn.conn();
 
 		try {
@@ -51,7 +52,7 @@ public class ProductDao {
 			rs = pstmt.executeQuery();
 
 			if (rs.next()) {
-				vo = new ProductVo(rs.getInt(1), rs.getString(2), rs.getInt(3), rs.getInt(4)); //vo에담아서
+				vo = new ProductVo(rs.getInt(1), rs.getString(2), rs.getInt(3), rs.getInt(4), rs.getString(5));
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -64,76 +65,54 @@ public class ProductDao {
 				e.printStackTrace();
 			}
 		}
-		return vo; //vo리턴
+		System.out.println(vo);
+		return vo;
 	}
-	//이름으로 검색
-	public ArrayList<ProductVo> selectByName(String name){ // like 패턴
+
+	public ArrayList<ProductVo> selectByName(String name) {
 		ArrayList<ProductVo> list = new ArrayList<>();
 		ResultSet rs = null;
-		String sql = "select * from Product where name like ? order by num";
-		
-		
+
+		String sql = "select * from product where name like ? order by num";
 		Connection conn = dbconn.conn();
-		
+
 		try {
 			PreparedStatement pstmt = conn.prepareStatement(sql);
-			pstmt.setString(1,"%"+name+"%"); //%name% name이 포함된녀석들 모두찾기
+			pstmt.setString(1, "%" + name + "%");
 			rs = pstmt.executeQuery();
-			
-			while(rs.next()) {
-				list.add(new ProductVo(rs.getInt(1), rs.getString(2), rs.getInt(3), rs.getInt(4)));
+
+			while (rs.next()) {
+				list.add(new ProductVo(rs.getInt(1), rs.getString(2), rs.getInt(3), rs.getInt(4), rs.getString(5)));
 			}
-		} catch (SQLException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		}
-		finally {
-		try {
-			conn.close();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+		} finally {
+			try {
+				conn.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		}
-	}return list;
-		
+		return list;
 	}
-	
-	//낮은가격에서 높은가격 가격으로 검색. where between and
-	public ArrayList<ProductVo> selectByPrice(int low, int high){
+
+	public ArrayList<ProductVo> selectByPrice(int low, int high) {
 		ArrayList<ProductVo> list = new ArrayList<>();
 		ResultSet rs = null;
-		
+
 		String sql = "select * from product where price between ? and ? order by num";
 		Connection conn = dbconn.conn();
-		
+
 		try {
 			PreparedStatement pstmt = conn.prepareStatement(sql);
-			
 			pstmt.setInt(1, low);
 			pstmt.setInt(2, high);
 			rs = pstmt.executeQuery();
-			while(rs.next()) {
-				list.add(new ProductVo(rs.getInt(1), rs.getString(2), rs.getInt(3), rs.getInt(4)));
-			}
-			
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} return list;
-	}
-	
-	//전체출력
-	public ArrayList<ProductVo> selectAll(){
-		ResultSet rs = null;
-		ArrayList<ProductVo> list = new ArrayList<>();
-		String sql = "select*from product";
-		Connection conn = dbconn.conn();
-		try {
-			PreparedStatement pstmt = conn.prepareStatement(sql);
-			rs = pstmt.executeQuery();
-			
-			while(rs.next()) {
-				list.add(new ProductVo(rs.getInt(1), rs.getString(2), rs.getInt(3), rs.getInt(4)));
+
+			while (rs.next()) {
+				list.add(new ProductVo(rs.getInt(1), rs.getString(2), rs.getInt(3), rs.getInt(4), rs.getString(5)));
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -145,35 +124,91 @@ public class ProductDao {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-		}return list;
+		}
+		return list;
 	}
-	
-	//상품명,가격,수량  수정. - 번호로 찾아서
-	public void update(ProductVo vo){
-	String sql = "update product set name=?, price=?, amount=? where num=?"; // ','<<<빼먹지말기!!!!!!!!!!
-	Connection conn = dbconn.conn();
-	try {
-		PreparedStatement pstmt = conn.prepareStatement(sql);
-		pstmt.setString(1, vo.getName());
-		pstmt.setInt(2, vo.getPrice());
-		pstmt.setInt(3, vo.getAmount());
-		pstmt.setInt(4, vo.getNum());
-		pstmt.executeUpdate();
-	} catch (SQLException e) {
-		// TODO Auto-generated catch block
-		e.printStackTrace();
-	} finally {
+
+	public ArrayList<ProductVo> selectAll() {
+		ArrayList<ProductVo> list = new ArrayList<>();
+		ResultSet rs = null;
+
+		String sql = "select * from product order by num";
+		Connection conn = dbconn.conn();
+
 		try {
-			conn.close();
+			PreparedStatement pstmt = conn.prepareStatement(sql);
+			rs = pstmt.executeQuery();
+
+			while (rs.next()) {
+				list.add(new ProductVo(rs.getInt(1), rs.getString(2), rs.getInt(3), rs.getInt(4), rs.getString(5)));
+			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+		} finally {
+			try {
+				conn.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		return list;
+	}
+	public ArrayList<ProductVo> selectBySeller(String seller) {
+		ArrayList<ProductVo> list = new ArrayList<>();
+		ResultSet rs = null;
+
+		String sql = "select * from product where seller=? order by num";
+		Connection conn = dbconn.conn();
+
+		try {
+			PreparedStatement pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, seller);
+			rs = pstmt.executeQuery();
+
+			while (rs.next()) {
+				list.add(new ProductVo(rs.getInt(1), rs.getString(2), rs.getInt(3), rs.getInt(4), rs.getString(5)));
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			try {
+				conn.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		return list;
+	}
+
+	public void update(ProductVo vo) {
+		String sql = "update product set name=?, price=?, amount=? where num=?";
+		Connection conn = dbconn.conn();
+		try {
+			PreparedStatement pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, vo.getName());
+			pstmt.setInt(2, vo.getPrice());
+			pstmt.setInt(3, vo.getAmount());
+			pstmt.setInt(4, vo.getNum());
+			pstmt.executeUpdate();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			try {
+				conn.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		}
 	}
-}
-	//삭제
-	public void delete(int num){
-		String sql = "delete Product where num=?";
+
+	public void delete(int num) {
+		String sql = "delete product where num=?";
 		Connection conn = dbconn.conn();
 		try {
 			PreparedStatement pstmt = conn.prepareStatement(sql);
@@ -191,5 +226,4 @@ public class ProductDao {
 			}
 		}
 	}
-	
 }

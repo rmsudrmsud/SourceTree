@@ -49,11 +49,12 @@ public class ProductAdd extends HttpServlet {
 		String name= request.getParameter("name");
 		int price = Integer.parseInt(request.getParameter("price"));
 		int amount = Integer.parseInt(request.getParameter("amount"));
+		String seller= request.getParameter("seller");
 		
 		ProductService service = new ProductService();
-		service.addProduct(new ProductVo(0, name, price, amount)); //서비스add으로 db에넣어주고 vo객체에담기
+		service.addProduct(new ProductVo(0, name, price, amount, seller)); //서비스add으로 db에넣어주고 vo객체에담기
 		
-		response.sendRedirect("/webApp1/product/list");
+		response.sendRedirect("/webApp1/product/getbyseller?seller="+seller);
 	}
 
 }

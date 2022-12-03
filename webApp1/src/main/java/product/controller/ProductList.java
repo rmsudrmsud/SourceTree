@@ -10,6 +10,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import member.MemberService;
+import member.MemberVo;
 import product.ProductService;
 import product.ProductVo;
 
@@ -36,9 +38,11 @@ public class ProductList extends HttpServlet {
 		ProductService service = new ProductService();
 		ArrayList<ProductVo> list = service.getAll();
 		request.setAttribute("list", list); //list를, 이름을 list로 담기
+		
 		RequestDispatcher dis = request.getRequestDispatcher("/product/list.jsp");
 		dis.forward(request, response);
 		
+			
 		
 	}
 

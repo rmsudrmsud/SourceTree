@@ -32,6 +32,9 @@ public class MemDetail extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		request.setCharacterEncoding("UTF-8");
+		response.setContentType("text/html;charset=UTF-8");
+		
 		String id = request.getParameter("id");
 		MemberService service = new MemberService();
 		MemberVo vo = service.getMember(id);
@@ -50,7 +53,7 @@ public class MemDetail extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		doGet(request, response);
+		doGet(request, response); //get,post방식구분없이 동작할 경우 내버려두기
 	}
 
 }

@@ -37,6 +37,9 @@ public class MemListController extends HttpServlet {
     //뷰 페이지에서 출력
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		request.setCharacterEncoding("UTF-8");
+		response.setContentType("text/html;charset=UTF-8");
+		
 		MemberService service = new MemberService();
 		ArrayList<MemberVo> list = service.getAll();
 		//뷰페이지에 데이터 전달.(뷰페이지에서 부를이름,전달할 값)

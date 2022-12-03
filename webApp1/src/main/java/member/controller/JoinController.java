@@ -58,8 +58,9 @@ public class JoinController extends HttpServlet {
 		String pwd=request.getParameter("pwd");
 		String name=request.getParameter("name");
 		String email=request.getParameter("email");
+		int type=Integer.parseInt(request.getParameter("type"));
 		
-		MemberVo vo = new MemberVo(id, pwd, name, email);
+		MemberVo vo = new MemberVo(id, pwd, name, email, type);
 		MemberService service = new MemberService();
 		service.join(vo);//회원가입 완료
 		

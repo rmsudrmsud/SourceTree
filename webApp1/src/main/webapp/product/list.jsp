@@ -9,10 +9,11 @@
 </head>
 <body>
 <h3>상품목록</h3>
-
-<a href="/webApp1/product/add">상품등록</a><br /><!-- 클릭시 상품등록  폼으로 -->
+<c:if test="${sessionScope.type==1 }">
 <c:if test="${empty list }">
 등록된 상품이 없음<br/>
+</c:if>
+
 </c:if>
 <c:if test="${not empty list }">
 <form action="/webApp1/product/getbyname" method="post">
@@ -26,6 +27,12 @@
 <input type ="number" name="pr1">~<input type ="number" name="pr2">
 <input type ="submit" value="가격으로검색">
 </form><br/>
+
+<form action="/webApp1/product/getbyseller" method="post">
+판매자명:
+<input type ="text" name="seller">
+<input type ="submit" value="가격으로검색">
+</form><br/>
 		<table border="1">
 			<tr>
 				<th>상품번호</th>
@@ -35,8 +42,8 @@
 			<c:forEach var="vo" items="${list }">
 				<!-- var: 사용할변수이름 -->
 				<tr>
-					<td><a href="/webApp1/product/edit?num=${vo.num }">${vo.num }</a></td><!-- edit폼에 ? 파라메터로 num=${vo.num } 넘김 -->
-					<td>${vo.name }</td>
+					<td>>${vo.num }</td><!-- edit폼에 ? 파라메터로 num=${vo.num } 넘김 -->
+					<td><a href="/webApp1/product/detail?num=${vo.num}">${vo.name }</a></td>
 					<td>${vo.price }</td>
 				</tr>
 			</c:forEach>
