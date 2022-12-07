@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<comment>prop2 comment</comment>
+<entry key="port">5000</entry>
+<entry key="ip">192.168.0.123</entry>
+<entry key="id">scott</entry>
+<entry key="pwd">tiger</entry>
+</properties>

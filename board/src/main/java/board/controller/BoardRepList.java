@@ -30,14 +30,12 @@ public class BoardRepList extends HttpServlet {
         // TODO Auto-generated constructor stub
     }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
+	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		int parent = Integer.parseInt(request.getParameter("parent")); //원글에대한번호 보낸거 받아서
-		System.out.println(parent);
 		BoardService service = new BoardService();
+		
 		ArrayList<BoardVo> reps = service.getByParent(parent); //번호로 검색하는기능
 		JSONArray arr = new JSONArray(); //검색한녀석을 제이슨으로 담기(여러개니까 배열) JSONArray() = []과같음 / [{"num":3, "writer":"aaa"}]
 		for(BoardVo rep:reps) {

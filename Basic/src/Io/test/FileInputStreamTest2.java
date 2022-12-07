@@ -15,7 +15,6 @@ public class FileInputStreamTest2 {
 		try {
 			fi = new FileInputStream("src/Io/test/Files/a.txt");
 			
-			
 			//파일에서 읽은 데이터를 저장할 바이트 배열 생성.
 			byte[] datas = new byte[10];
 			//read(바이트 배열) : 배열의 크기만큼 읽어서 배열에 저장하고 읽은 바이트 수 반환.

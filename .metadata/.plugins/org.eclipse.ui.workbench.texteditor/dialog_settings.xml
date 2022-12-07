@@ -6,8 +6,10 @@
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
-		<item key="selection" value="Member"/>
+		<item key="selection" value="rep"/>
 		<list key="findhistory">
+			<item value="rep"/>
+			<item value="writer"/>
 			<item value="member"/>
 			<item value="sc.next"/>
 			<item value="sc"/>
@@ -16,13 +18,18 @@
 			<item value="insert"/>
 		</list>
 		<list key="replacehistory">
+			<item value="seller"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
-		<item key="DIALOG_X_ORIGIN" value="963"/>
-		<item key="DIALOG_Y_ORIGIN" value="113"/>
+		<item key="DIALOG_X_ORIGIN" value="1106"/>
+		<item key="DIALOG_Y_ORIGIN" value="416"/>
 		<item key="DIALOG_WIDTH" value="336"/>
 		<item key="DIALOG_HEIGHT" value="402"/>
 		<item key="DIALOG_FONT_NAME" value="1|.AppleSystemUIFont|11.0|0|COCOA|1|.AppleSystemUIFont"/>
+	</section>
+	<section name="org.eclipse.ui.texteditor.GotoLineAction$GotoLineDialog_dialogBounds">
+		<item key="DIALOG_X_ORIGIN" value="457"/>
+		<item key="DIALOG_Y_ORIGIN" value="323"/>
 	</section>
 </section>

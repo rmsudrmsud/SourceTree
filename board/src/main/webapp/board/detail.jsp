@@ -22,52 +22,63 @@ const mkdiv = (obj) => {//obj받은걸 화면에 뿌려줌
 	}
 	el.innerHTML = html;
 	return el; //생성한 div박스 return;
+	
 }
-
+		
 const mklist= () => {
 	
-	const xhttp = new XMLHttpRequest();
-	xhttp.onload = () => {
+	const xhttp = new XMLHttpRequest();  
+	
+	xhttp.onload = () => { 
 	  //받은 응답을 가지고 처리 코드 작성
 	  let arr = JSON.parse(xhttp.responseText); //제이슨보낸거 파싱해서 받은 배열
+	  
 	  let div = document.getElementById("repList");
 	  div.innerHTML=""; //댓글이 아래로 덧붙이도록
 	  for(let obj of arr){ //객체를 하나씩 꺼낸
+		  
 		  let chdiv = mkdiv(obj); // mkdiv로 만든div
+		  
 	  	div.appendChild(chdiv); //div repList에 자식으로 chdiv추가
 	  }
-	}
+	  
+	} 
 	
-	  let param = "parent=${vo.num}"; //파라메터로 원글에대한 번호
+	  let param = "parent=${vo.num}"; //파라메터로 원글에대한 번호 
+	  
 	  xhttp.open("post", "${pageContext.request.contextPath}/board/replist");
 	  
 	  xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-	  
 	  xhttp.send(param);
 	
 }
+
 window.onload = () => {
 	mklist();
 }
 
 const a = () => {
+	//alert("1");
 	const xhttp = new XMLHttpRequest();
 	
-	xhttp.onload = () =>{
+	xhttp.onload = () =>{ //콜백함수 xhttp의 onload 콜백함수:요청끝나고 머시기~~ 
+		
 		let obj = JSON.parse(xhttp.responseText); //obj 에 flag값밖에없음
-		if(obj.flag){
+	//	alert("2");
+		if(obj.flag){ 
 			mklist();
 			f.title.value = ""; //입력폼의내용 지우기
 			f.content.value = ""; //입력폼의내용 지우기
 		}else{
 			alert('댓글추가실패');
-		}
+		} 
 	}
 	
+	//alert("3");
 	let param = "writer=${sessionScope.loginId}";
 	param += "&title="+f.title.value; //전송할 폼파라메터가 여러개니까 연결하려고 &
 	param += "&content="+f.content.value;
-	param += "&parent=${vo.num}";
+	param += "&parent=${vo.num}"; 
 	
 	xhttp.open("post", "${pageContext.request.contextPath }/board/repadd");
 	xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
