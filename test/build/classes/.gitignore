@@ -1,3 +1,4 @@
-/test/
-/command.properties
+/dbconn/
+/guestbook/
 /handler/
+/test/

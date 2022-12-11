@@ -121,5 +121,24 @@ public class RepDao {
 		}
 	}
 	
+	public void delete(int num) {
+		String sql = "delete from img_rep where num=?";
+		Connection conn = dbconn.conn();
+		try {
+			PreparedStatement pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, num);
+			pstmt.executeUpdate();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			try {
+				conn.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+	}
 	
 }

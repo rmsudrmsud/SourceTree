@@ -23,11 +23,11 @@
   <Listener className="org.apache.catalina.security.SecurityListener" />
   -->
   <!-- APR library loader. Documentation at /docs/apr.html -->
-  <Listener SSLEngine="on" className="org.apache.catalina.core.AprLifecycleListener"></Listener>
+  <Listener SSLEngine="on" className="org.apache.catalina.core.AprLifecycleListener"/>
   <!-- Prevent memory leaks due to use of particular java/javax APIs-->
   <Listener className="org.apache.catalina.core.JreMemoryLeakPreventionListener"/>
   <Listener className="org.apache.catalina.mbeans.GlobalResourcesLifecycleListener"/>
-  <Listener className="org.apache.catalina.core.ThreadLocalLeakPreventionListener"></Listener>
+  <Listener className="org.apache.catalina.core.ThreadLocalLeakPreventionListener"/>
 
   <!-- Global JNDI resources
        Documentation at /docs/jndi-resources-howto.html
@@ -152,7 +152,7 @@
              Note: The pattern used is equivalent to using pattern="common" -->
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log" suffix=".txt"/>
 
-      <Context docBase="html" path="/html" reloadable="true" source="org.eclipse.jst.jee.server:html"/><Context docBase="webApp1" path="/webApp1" reloadable="true" source="org.eclipse.jst.jee.server:webApp1"/><Context docBase="board" path="/board" reloadable="true" source="org.eclipse.jst.jee.server:board"/><Context docBase="imgupload" path="/imgupload" reloadable="true" source="org.eclipse.jst.jee.server:imgupload"/><Context docBase="DownTest" path="/DownTest" reloadable="true" source="org.eclipse.jst.jee.server:DownTest"/><Context docBase="commandHandle" path="/commandHandle" reloadable="true" source="org.eclipse.jst.jee.server:commandHandle"/></Host>
+      <Context docBase="commandHandlePattern" path="/commandHandlePattern" reloadable="true" source="org.eclipse.jst.jee.server:commandHandlePattern"/><Context docBase="imgupload" path="/imgupload" reloadable="true" source="org.eclipse.jst.jee.server:imgupload"/><Context docBase="commandHandle" path="/commandHandle" reloadable="true" source="org.eclipse.jst.jee.server:commandHandle"/></Host>
     </Engine>
   </Service>
 </Server>

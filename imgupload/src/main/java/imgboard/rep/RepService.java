@@ -21,7 +21,11 @@ public class RepService {
 		return dao.selectAll(parent);
 	}
 	
-	public void updateRep(Rep r) {
+	public void editRep(Rep r) {
 		dao.update(r);
+	}
+	
+	public void delRep(int num) {
+		dao.delete(num);
 	}
 }

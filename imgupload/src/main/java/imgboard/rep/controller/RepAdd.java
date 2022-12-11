@@ -35,6 +35,9 @@ public class RepAdd extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		request.setCharacterEncoding("UTF-8");
+		response.setCharacterEncoding("UTF-8");
+		
 		String writer = request.getParameter("writer");
 		String content = request.getParameter("content");
 		int parent = Integer.parseInt(request.getParameter("parent"));

@@ -9,6 +9,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.json.simple.JSONObject;
+
 import imgboard.rep.Rep;
 import imgboard.rep.RepService;
 
@@ -32,15 +34,6 @@ public class RepEdit extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		RequestDispatcher dis =request.getRequestDispatcher("/imgboard/repedit.jsp");
-		dis.forward(request, response);
-	}
-
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		request.setCharacterEncoding("UTF-8");
 		response.setCharacterEncoding("UTF-8");
 		
@@ -48,9 +41,23 @@ public class RepEdit extends HttpServlet {
 		String content = request.getParameter("content");
 		
 		RepService service = new RepService();
-		service.updateRep(new Rep(num, null, content, 0));
+		service.editRep(new Rep(num, "", content, 0));
+		Rep r = service.getRep(num);
+		JSONObject obj = new JSONObject();
+		obj.put("num", r.getNum());
+		obj.put("writer", r.getWriter());
+		obj.put("content", r.getContent());
 		
-		response.sendRedirect(request.getContextPath()+"/imgboard/list");
+		String txt = obj.toJSONString();
+		response.getWriter().append(txt);
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		doGet(request, response);
 	}
 
 }

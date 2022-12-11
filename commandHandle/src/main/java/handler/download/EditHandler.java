@@ -14,10 +14,7 @@ public class EditHandler implements Handler {
 	@Override
 	public String process(HttpServletRequest request, HttpServletResponse response) {
 		// TODO Auto-generated method stub
-		if (request.getMethod().toLowerCase().equals("get")) {
-			return "/download/add.jsp";
-		}
-		
+
 		try {
 			request.setCharacterEncoding("UTF-8");
 			response.setCharacterEncoding("UTF-8");

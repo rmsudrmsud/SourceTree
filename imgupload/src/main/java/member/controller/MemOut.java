@@ -31,9 +31,6 @@ public class MemOut extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		request.setCharacterEncoding("UTF-8");
-		response.setContentType("text/html;charset=UTF-8");
-		
 		String id = request.getParameter("id");
 		MemberService service = new MemberService();
 		//request.getContextPath() : 프로젝트 base경로 => 이클립스에서 /프로젝트명

@@ -6,6 +6,13 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<script type="text/javascript">
+/* 
+const a = () => {
+	let win = open("${pageContext.request.contextPath }/data/openwin.jsp", "win", "width=300,height=200");
+}
+ */
+</script>
 </head>
 <body>
 <c:if test="${sessionScope.loginId != vo.writer }">
@@ -13,7 +20,7 @@
 </c:if>
 <h3>자료 상세페이지</h3>
 <a href="${pageContext.request.contextPath }/DispatcherServlet?url=/download/getall">목록으로</a><br/>
-<form action="${pageContext.request.contextPath }/DispatcherServlet?url=/download/edit&num=${vo.num}" method="post">
+<form action="${pageContext.request.contextPath }/DispatcherServlet?url=/download/edit&num=${vo.num}" method="post" name="f">
 <table border="1">
 <tr><th>글번호</th><td><input type="text" name="writer" value="${vo.num }" readonly></td></tr>
 <tr><th>작성자</th><td><input type="text" name="writer" value="${vo.writer }" readonly></td></tr>
@@ -27,6 +34,7 @@
 <a href="${pageContext.request.contextPath }/DispatcherServlet?url=/download/del&num=${vo.num}"><input type="button" value="삭제"></a></td></tr>
 </c:if>
 </table>
+<%-- <input type="hidden" name="down_path" value="${vo.down_path }"> --%>
 </form>
 </body>
 </html>

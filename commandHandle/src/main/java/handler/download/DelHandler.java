@@ -11,7 +11,7 @@ public class DelHandler implements Handler {
 	@Override
 	public String process(HttpServletRequest request, HttpServletResponse response) {
 		// TODO Auto-generated method stub
-		System.out.println("a");
+		
 		int num = Integer.parseInt(request.getParameter("num"));
 		DownloadService service = new DownloadService();
 		service.delDownload(num);
