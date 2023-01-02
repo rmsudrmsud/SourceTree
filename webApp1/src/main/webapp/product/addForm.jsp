@@ -1,21 +1,22 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
+<meta charset="EUC-KR">
 <title>Insert title here</title>
 </head>
 <body>
-<h3>ìƒí’ˆë“±ë¡</h3>
-<a href="/webApp1/product/list">ëª©ë¡ìœ¼ë¡œ ëŒì•„ê°€ê¸°</a><br/>
+<h3>»óÇ°µî·Ï</h3>
+<a href="/webApp1/product/list">¸ñ·ÏÀ¸·Î µ¹¾Æ°¡±â</a><br/>
 <form action="/webApp1/product/add" method="post">
 <table border="1">
-<tr><th>ìƒí’ˆì´ë¦„</th><td><input type="text" name="name"></td></tr>
-<tr><th>ê°€ê²©</th><td><input type="number" name="price"></td></tr>
-<tr><th>ìˆ˜ëŸ‰</th><td><input type="number" name="amount"></td></tr>
-<tr><th>íŒë§¤ìž</th><td><input type="text" name="seller" value="${sessionScope.loginId}" readonly></td></tr>
-<tr><th>ì €ìž¥</th><td><input type="submit" value="ìž‘ì„±"></td></tr>
+<tr><th>Á¦Ç°¸í</th><td><input type="text" name="name"></td></tr>
+<tr><th>°¡°Ý</th><td><input type="number" name="price"></td></tr>
+<tr><th>¼ö·®</th><td><input type="number" name="amount"></td></tr>
+<tr><th>ÆÇ¸ÅÀÚ</th>
+<td><input type="text" name="seller" value="${sessionScope.loginId }" readonly></td></tr>
+<tr><th>µî·Ï</th><td><input type="submit" value="µî·Ï"></td></tr>
 </table>
 </form>
 </body>

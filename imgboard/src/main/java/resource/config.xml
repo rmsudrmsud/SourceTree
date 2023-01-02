@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<environments default="mybatis_test">
+		<environment id="mybatis_test">
+			<!-- transactionManager : 관리자 -->
+			<transactionManager type="JDBC" />
+			<!-- datasource type=“pooled” 커넥션객체를 미리 만들어두고 꺼내서 사용 -빠르게 사용하기위해 -->
+			<dataSource type="POOLED">
+				<property name="driver" value="oracle.jdbc.driver.OracleDriver" />
+				<property name="url" value="jdbc:oracle:thin:@localhost:1521:xe" />
+				<!-- db계정, 비밀번호 -->
+				<property name="username" value="system" />
+				<property name="password" value="chlrmsgud123" />
+			</dataSource>
+		</environment>
+	</environments>
+</configuration>

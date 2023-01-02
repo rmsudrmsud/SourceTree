@@ -1,55 +1,59 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
+<meta charset="EUC-KR">
 <title>Insert title here</title>
 <script type="text/javascript">
-//ë™ê¸°ìš”ì²­ í•¨ìˆ˜ : í˜ìŠ ã…£ì´ë™
+//µ¿±â¿äÃ»: ÆäÀÌÁö ÀÌµ¿
 const a = () => {
-	location.href="/webApp1/idcheck2?id="+f.id.value;
+	location.href="/webApp1/IdCheck2?id="+f.id.value;
 }
 
-//ë¹„ë™ê¸°ìš”ì²­ : í˜ì´ì§€ ì´ë™ ì•ˆí•¨
-const b = () =>{
-	//ë¹„ë™ê¸° ìš”ì²­ ê°ì²´ ìƒì„±
+//ºñµ¿±â¿äÃ»: ÆäÀÌÁö ÀÌµ¿ ¾ÈÇÔ
+const b = () => {
+	//ºñµ¿±â ¿äÃ» °´Ã¼ »ı¼º
 	const xhttp = new XMLHttpRequest();
-	//ì„œë²„ë¡œë¶€í„° ì‘ë‹µì´ ì™”ì„ ë•Œ í˜¸ì¶œë  í•¨ìˆ˜ë¥¼ ë“±ë¡
-	xhttp.onload = () => { //xhttp.onload : ajax ìš”ì²­ì´ì˜¤ìë§ˆì ì‹¤í–‰ë˜ëŠ”ê²ƒ. window.onload ì™€ë‹¤ë¦„
-	  let div = document.getElementById("res");
-	  div.innerHTML = xhttp.responseText; //ì‘ë‹µ í…ìŠ¤íŠ¸
-	}
-	//ìš”ì²­í•  íŒŒë¼ë©”í„°
-	let param = "id="+f2.id.value
 	
-	//ì „ì†¡ë°©ì‹, ì„œë²„í˜ì´ì§€ ì„¤ì •
-	xhttp.open("post", "/webApp1/ajax/idcheck")
-	//postë°©ì‹ì¼ë•Œ postheader ì„¤ì •
+	//¼­¹ö·ÎºÎÅÍ ÀÀ´äÀÌ ¿ÔÀ»¶§ È£ÃâµÉ ÇÔ¼ö µî·Ï
+	xhttp.onload = () => {
+	let div = document.getElementById("res");
+	div.innerHTML = xhttp.responseText; //ÀÀ´ä ÅØ½ºÆ®
+
+	}
+	
+	//¿äÃ» ÆÄ¶ó¸ŞÅÍ
+	let param = "id="+f2.id.value;
+	
+	//Àü¼Û¹æ½Ä, ¼­¹öÆäÀÌÁö ¼³Á¤
+	xhttp.open("post", "/webApp1/ajax/idcheck");
+	
+	//post header ¼³Á¤
 	xhttp.setRequestHeader("Content-type", 
 			"application/x-www-form-urlencoded");
-	//ìš”ì²­ ë³´ëƒ„
-	xhttp.send(param); // ì´ë…€ì„ì´ idcheckë¡œ ê°
+	
+	//¿äÃ» º¸³¿
+	xhttp.send(param);
 }
 </script>
 </head>
 <body>
-<h3>íšŒì›ê°€ì…</h3>
+<h3>È¸¿ø°¡ÀÔ</h3>
 <form name="f">
-id:<input type = "text" name="id" value="${id }">
-<input type = "button" value="ì¤‘ë³µì²´í¬" onclick="a()">
-<span>${msg }</span><br/>
+id:<input type="text" name="id" value="${id }">
+<input type="button" value="Áßº¹Ã¼Å©" onclick="a()"><span>${msg }</span><br/>
 pwd:<input type="password" name="pwd"><br/>
 name:<input type="text" name="name"><br/>
-<input type="submit" value="ê°€ì…">
-</form>
+<input type="submit" value="°¡ÀÔ">
+</form><br/>
 
 <form name="f2">
-id:<input type = "text" name="id"">
-<input type = "button" value="ì¤‘ë³µì²´í¬" onclick="b()"><span id="res"></span><br/>
+id:<input type="text" name="id">
+<input type="button" value="Áßº¹Ã¼Å©" onclick="b()"><span id="res"></span><br/>
 pwd:<input type="password" name="pwd"><br/>
 name:<input type="text" name="name"><br/>
-<input type="submit" value="ê°€ì…">
+<input type="submit" value="°¡ÀÔ">
 </form>
 </body>
 </html>

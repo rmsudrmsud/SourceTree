@@ -13,7 +13,9 @@ window.onload = () => {
 	xhttp.onload = () => {
 		//받은응답을 가지고 처리코드작성
 	  let val = xhttp.responseText;
+	  console.log(val);
 	  let arr = JSON.parse(val);
+	  console.log(arr);
 	  let html = "";
 	 /*  for(let key in obj){
 		  html += key + ":";

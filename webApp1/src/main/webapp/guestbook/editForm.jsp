@@ -1,44 +1,60 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+	pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
+<meta charset="EUC-KR">
 <title>Insert title here</title>
-<script>
+<script type="text/javascript">
 const edit = () => {
-	let pwd = prompt("ê¸€ ë¹„ë°€ë²ˆí˜¸ ì…ë ¥: ");//ê¸€ë¹„ë°€ë²ˆí˜¸í™•ì¸í•˜ê¸° ìœ„í•´ì„œ. prompt :alertì—ì…ë ¥ë°•ìŠ¤í•˜ë‚˜ ë”
+	let pwd = prompt("±Û ºñ¹Ğ¹øÈ£ ÀÔ·Â:");
 	if(${vo.pwd}==pwd){
-		f.submit(); //í¼ì—ì„œ sbumitë²„íŠ¼ ëˆ„ë¥¸ê²ƒê³¼ ê°™ì€ë™ì‘. ì œì¶œ
+		f.submit();//Æû submit ¹öÆ° Å¬¸¯°ú µ¿ÀÏÇÏ°Ô µ¿ÀÛ
 	}else{
-		alert('íŒ¨ìŠ¤ì›Œë“œ ë¶ˆì¼ì¹˜. ìˆ˜ì •ì·¨ì†Œ')
+		alert('ÆĞ½º¿öµå ºÒÀÏÄ¡. »èÁ¦Ãë¼Ò')
 	}
 }
-const del = () => {
-	let pwd = prompt("ê¸€ ë¹„ë°€ë²ˆí˜¸ ì…ë ¥: ");//ê¸€ë¹„ë°€ë²ˆí˜¸í™•ì¸í•˜ê¸° ìœ„í•´ì„œ. prompt :alertì—ì…ë ¥ë°•ìŠ¤í•˜ë‚˜ ë”
+const del = () =>{
+	let pwd = prompt("±Û ºñ¹Ğ¹øÈ£ ÀÔ·Â:");
 	if(${vo.pwd}==pwd){
-		location.href="/webApp1/guestbook/del?num=${vo.num}"; //guestbook/delì— ìš”ì²­(ë§í¬ getë°©ì‹) ?num=${vo.num}
+		location.href="webApp1/guestbook/del?num=${vo.num}";
 	}else{
-		alert('íŒ¨ìŠ¤ì›Œë“œ ë¶ˆì¼ì¹˜. ìˆ˜ì •ì·¨ì†Œ')
+		alert('ÆĞ½º¿öµå ºÒÀÏÄ¡. »èÁ¦ Ãë¼Ò')
+	
 	}
 }
+
 </script>
 </head>
 <body>
-<h3>ìƒì„¸í˜ì´ì§€</h3>
-<a href="/webApp1/guestbook/list">ê¸€ ëª©ë¡</a>
-<form name="f" action="/webApp1/guestbook/edit" method="post">
-<table border="1">
-<tr><th>ê¸€ë²ˆí˜¸</th><td>${vo.num }</td></tr>
-<tr><th>ì‘ì„±ì</th><td>${vo.writer }</td></tr>
-<tr><th>ì‘ì„±ì¼</th><td>${vo.w_date }</td></tr>
-<tr><th>ë‚´ìš©</th><td><input type="text" name="content" value="${vo.content }"></td></tr> <!--ì›ë˜ê¸€ ë‚´ìš©ì„ ë°•ìŠ¤ì—ë„£ì–´ì„œ ì‹¤í–‰ -->
-<tr><th>ìˆ˜ì •/ì‚­ì œ</th>
-<td><input type="button" value="ìˆ˜ì •" onclick="edit()">
-	<input type="button" value="ì‚­ì œ" onclick="del()">
-</td></tr>
-</table>
-<input type="hidden" name="num" value="${vo.num }"> <!--ê¸€ë²ˆí˜¸ íˆë“ ì—ë‹´ì•„ì„œ ë³´ë‚´ê¸°ìš©ë„-->
-</form>
+	<h3>»ó¼¼ ÆäÀÌÁö</h3>
+	<a href="/webApp1/guestbook/list">±Û¸ñ·Ï</a>
+	<br />
+	<form action="/webApp1/guestbook/edit" method="post" name="f">
+		<table border="1">
+			<tr>
+				<th>±Û¹øÈ£</th>
+				<td>${vo.num }</td>
+			</tr>
+			<tr>
+				<th>ÀÛ¼ºÀÚ</th>
+				<td>${vo.writer }</td>
+			</tr>
+			<tr>
+				<th>ÀÛ¼ºÀÏ</th>
+				<td>${vo.w_date }</td>
+			</tr>
+			<tr>
+				<th>³»¿ë</th>
+				<td><input type="text" name="content" value="${vo.content }"></td>
+			</tr>
+			<tr>
+				<th>¼öÁ¤/»èÁ¦</th>
+				<td><input type="button" value="¼öÁ¤" onclick="edit()">
+					<input type="button" value="»èÁ¦" onclick="del()"></td>
+			</tr>
+		</table>
+		<input type="hidden" name="num" value="${vo.num }">
+	</form>
 </body>
 </html>

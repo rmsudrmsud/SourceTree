@@ -3,19 +3,19 @@ package product;
 import java.util.ArrayList;
 
 public class ProductService {
-	
 	private ProductDao dao;
-	
-	public ProductService(){
-	dao = new ProductDao();
+
+	public ProductService() {
+		dao = new ProductDao();
 	}
 	
 	public void addProduct(ProductVo vo) {
+		
 		dao.insert(vo);
 	}
 	
 	public ProductVo getByNum(int num) {
-		return dao.selectByNum(num);
+		return dao.select(num);
 	}
 	
 	public ArrayList<ProductVo> getByName(String name){
@@ -26,7 +26,7 @@ public class ProductService {
 		return dao.selectByPrice(low, high);
 	}
 	
-	public ArrayList<ProductVo> getAll() {
+	public ArrayList<ProductVo> getAll(){
 		return dao.selectAll();
 	}
 	
@@ -36,9 +36,5 @@ public class ProductService {
 	
 	public void delProduct(int num) {
 		dao.delete(num);
-	}
-	
-	public ArrayList<ProductVo> getBySeller(String seller){
-		return dao.selectBySeller(seller);
 	}
 }

@@ -29,4 +29,6 @@ public class MemberService {
 	public ArrayList<MemberVo> getAll(){
 		return dao.selectAll();
 	}
+		
+	
 }

@@ -16,14 +16,14 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/ReadCookie")
 public class ReadCookie extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public ReadCookie() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
+
+	/**
+	 * @see HttpServlet#HttpServlet()
+	 */
+	public ReadCookie() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
@@ -32,15 +32,22 @@ public class ReadCookie extends HttpServlet {
 		// TODO Auto-generated method stub
 		//모든쿠키읽기
 		Cookie[] cookies = request.getCookies();
-	      PrintWriter out = response.getWriter();
-	      out.append("<html><body><h3>");
-	      for(Cookie c : cookies) {
-	         out.append("name: " + c.getName()+"<br/>"); //쿠키의 getName 쿠키이름 읽는 메서드
-	         out.append("value: " + c.getValue()+"<br/>");//쿠키의 getvalue 쿠키값 읽는 메서드
-	      }
-	  	out.append("</h3></body></html>");
-	   }
-	
+		PrintWriter out = response.getWriter();
+		out.append("<html><body><h3>");
+		for (Cookie c : cookies) {
+			out.append("name:" + c.getName() + "<br/>");
+			out.append("value:" + c.getValue() + "<br/>");
+		
+		//쿠키삭제
+			if(c.getName().equals("key1")) {
+				c.setMaxAge(0);//쿠키의 유효시간 설정.
+			}
+		
+		}
+		out.append("</h3></body></html>");
+
+	}
+
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */

@@ -1,46 +1,53 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
+<meta charset="EUC-KR">
 <title>Insert title here</title>
 <script type="text/javascript">
 const a = () => {
-	
+	// 1. ºñµ¿±â request°´Ã¼ »ı¼º
 	const xhttp = new XMLHttpRequest();
-	
+
+	// 2. ÀÀ´äÀ» ¹Ş¾ÒÀ»¶§ ÀÚµ¿ È£ÃâµÉ ÇÔ¼ö¸¦ µî·Ï
 	xhttp.onload = () => {
-	
+	  //¹ŞÀº ÀÀ´äÀ» °¡Áö°í Ã³¸® ÄÚµå ÀÛ¼º
 	  let div = document.getElementById("res");
-	  div.innerHTML = xhttp.responseText; 
+	  div.innerHTML = xhttp.responseText; //ÀÀ´ä ÅØ½ºÆ®
 	}
-	
+
+	// 3. ºñµ¿±â ¿äÃ» ¼³Á¤
+	//param1:Àü¼Û¹æ½Ä. post, get, patch, update, delete
+	//param2: ¿äÃ»¹ŞÀ» ¼­¹öÆäÀÌÁö °æ·Î
 	let param = "?name="+f.name.value
 	xhttp.open("GET", "/webApp1/ajax/test1"+param);
-	//4.ìš”ì²­ë³´ëƒ„
+
+	// 4. ¿äÃ»º¸³¿
 	xhttp.send();
 }
-const b = () => {
-	
-const xhttp = new XMLHttpRequest();
 
-	xhttp.onload = () => {	
+const b = () => {
+	// 1. ºñµ¿±â request°´Ã¼ »ı¼º
+	const xhttp = new XMLHttpRequest();
+
+	// 2. ÀÀ´äÀ» ¹Ş¾ÒÀ»¶§ ÀÚµ¿ È£ÃâµÉ ÇÔ¼ö¸¦ µî·Ï
+	xhttp.onload = () => {
+	  //¹ŞÀº ÀÀ´äÀ» °¡Áö°í Ã³¸® ÄÚµå ÀÛ¼º
 	  let div = document.getElementById("res");
-	  div.innerHTML = xhttp.responseText; 
+	  div.innerHTML = xhttp.responseText; //ÀÀ´ä ÅØ½ºÆ®
 	}
-	//3. ë¹„ë™ê¸° ìš”ì²­
-	//param1 ì „ì†¡ë°©ì‹ posts, get, patch, update, delete
-	//param2 ìš”ì²­ë°›ì„ ì„œë²„ í˜ì´ì§€ ê²½ë¡œ
+
+	// 3. ºñµ¿±â ¿äÃ» ¼³Á¤
+	//param1:Àü¼Û¹æ½Ä. post, get, patch, update, delete
+	//param2: ¿äÃ»¹ŞÀ» ¼­¹öÆäÀÌÁö °æ·Î
 	let param = "name="+f.name.value
 	xhttp.open("post", "/webApp1/ajax/test1");
-	
-	//request í—¤ë”ì— content type ì„ applicationìœ¼ë¡œ ì„¤ì •
+
+	//request Çì´õ¿¡ content typeÀ» applicationÀ¸·Î ¼³Á¤
 	xhttp.setRequestHeader("Content-type", 
-			"application/x-www-form-urlencoded"); 
-	//postë°©ì‹ìœ¼ë¡œ ë³´ë‚¼ë• í—¤ë”ë°©ì‹ì„ ì„¸íŒ…í•´ì¤˜ì•¼ ê°’ì´ ì •ìƒì ìœ¼ë¡œ ê°. @ë°©ì‹, application ë°©ì‹
-	
-	//4.ìš”ì²­ë³´ëƒ„
+			"application/x-www-form-urlencoded");
+	// 4. ¿äÃ»º¸³¿
 	xhttp.send(param);
 }
 </script>
@@ -48,8 +55,8 @@ const xhttp = new XMLHttpRequest();
 <body>
 <form action="" name="f">
 name:<input type="text" name="name"><br/>
-<input type="button" value="get" onclick="a()">
-<input type="button" value="post" onclick="b()">
+<input type="button" value="getÀü¼Û" onclick="a()">
+<input type="button" value="postÀü¼Û" onclick="b()">
 </form><br/>
 <div id="res"></div>
 </body>

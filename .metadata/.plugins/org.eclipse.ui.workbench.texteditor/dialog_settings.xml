@@ -6,24 +6,34 @@
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
-		<item key="selection" value="rep"/>
+		<item key="selection" value="content_"/>
 		<list key="findhistory">
-			<item value="rep"/>
-			<item value="writer"/>
-			<item value="member"/>
-			<item value="sc.next"/>
-			<item value="sc"/>
-			<item value="package sports;"/>
-			<item value="PostVo"/>
-			<item value="insert"/>
+			<item value="content_"/>
+			<item value="content"/>
+			<item value="#title"/>
+			<item value="tbl_num"/>
+			<item value="cancel"/>
+			<item value="vo.num"/>
+			<item value="res"/>
+			<item value="getR"/>
+			<item value="edit_td"/>
+			<item value="redit"/>
+			<item value="contexPath"/>
+			<item value="re"/>
+			<item value="write"/>
+			<item value="list"/>
+			<item value="del"/>
 		</list>
 		<list key="replacehistory">
+			<item value="busRouteNm"/>
+			<item value="weather"/>
+			<item value="Resources/images"/>
 			<item value="seller"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
-		<item key="DIALOG_X_ORIGIN" value="1106"/>
-		<item key="DIALOG_Y_ORIGIN" value="416"/>
+		<item key="DIALOG_X_ORIGIN" value="1037"/>
+		<item key="DIALOG_Y_ORIGIN" value="473"/>
 		<item key="DIALOG_WIDTH" value="336"/>
 		<item key="DIALOG_HEIGHT" value="402"/>
 		<item key="DIALOG_FONT_NAME" value="1|.AppleSystemUIFont|11.0|0|COCOA|1|.AppleSystemUIFont"/>

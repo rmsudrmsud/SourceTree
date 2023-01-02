@@ -15,7 +15,7 @@ import member.MemberVo;
 /**
  * Servlet implementation class IdCheck2
  */
-@WebServlet("/idcheck2")
+@WebServlet("/IdCheck2")
 public class IdCheck2 extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -32,8 +32,8 @@ public class IdCheck2 extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		request.setCharacterEncoding("UTF-8");
-		response.setContentType("text/html;charset=UTF-8");
+		request.setCharacterEncoding("euc-kr");
+		response.setCharacterEncoding("euc-kr");
 		
 		String id = request.getParameter("id");
 		MemberService service = new MemberService();
@@ -42,14 +42,14 @@ public class IdCheck2 extends HttpServlet {
 		String msg = "사용불가능한 아이디";
 		if(vo==null) {
 			flag = true;
-			msg = "사용가능한 아이디";
+			msg = "사용 가능한 아이디";
 		}
-		
 		request.setAttribute("flag", flag);
 		request.setAttribute("id", id);
 		request.setAttribute("msg", msg);
 		
-		RequestDispatcher dis = request.getRequestDispatcher("/ajax/joinForm.jsp");
+		RequestDispatcher dis = 
+				request.getRequestDispatcher("/ajax/joinForm.jsp");
 		dis.forward(request, response);
 	}
 

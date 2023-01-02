@@ -1,60 +1,45 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+	pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
+<meta charset="EUC-KR">
 <title>Insert title here</title>
 <script type="text/javascript">
-const xhttp = new XMLHttpRequest();
+window.onload = () => {
 
-xhttp.onload = () => {
-	//ë°›ì€ì‘ë‹µì„ ê°€ì§€ê³  ì²˜ë¦¬ì½”ë“œì‘ì„±
-  let val = xhttp.responseText;
-  let arr = JSON.parse(val);
-  let html = "<table border='1'><tr><th>num</th><th>name</th><th>price</th></tr>";
-
-  for(let obj of arr){
-	  html += "<tr><td>" + obj.num + "</td>";
-	  html += "<td onmouseover='a("+obj.num+")' onmouseout='b()'>" + obj.name + "</td>";
-	  html += "<td>" + obj.price + "</td></tr>";
-  }
-  
-  html += "</table>";
-  let div = document.getElementById("list");
-  div.innerHTML = html; 
-}
-
-xhttp.open("GET", "/webApp1/ajax/productlist");
-
-xhttp.send();
-
-const a = (num) => {
 	const xhttp = new XMLHttpRequest();
+	
 	xhttp.onload = () => {
-		//ë°›ì€ì‘ë‹µì„ ê°€ì§€ê³  ì²˜ë¦¬ì½”ë“œì‘ì„±
+		//¹ŞÀºÀÀ´äÀ» °¡Áö°í Ã³¸®ÄÚµåÀÛ¼º
 	  let val = xhttp.responseText;
-	  let obj = JSON.parse(val);
-	  let div = document.getElementById("detail");
-	  let html = "";
-	  for(let key in obj){
-		  html += key+":"+obj[key]+"<br/>";
+	  let arr = JSON.parse(val);
+	  let html = "<table border='1'><tr><th>num</th><th>name</th>
+	  <th>price</th></tr>";
+		 /*  for(let key in obj){
+			  html += key + ":";
+			  html += obj[key] + "<br/>";
+		  } */
+		  for(let obj of arr){
+			  html += "<tr><td>" + obj.num + "</td>";
+			  html += "<td>" + obj.name + "</td>";
+			  html += "<td>" + obj.price + "</td></tr>";
 	  }
-	  div.innerHTML = html;
+	  html+= "</table>";
+	  let div = document.getElementById("list");
+	  div.innerHTML = html; 
 	}
-	xhttp.open("GET", "/webApp1/ajax/productdetail?num="+num);
-	xhttp.send();
-}
 
-const b = () => {
-	let div = document.getElementById("detail");
-	div.innerHTML = "";
+	
+	xhttp.open("GET", "/webApp1/ajax/productlist");
+
+	
+	xhttp.send();
 }
 </script>
 </head>
 <body>
-	<h3>ìƒí’ˆëª©ë¡</h3>
+	<h3>»óÇ°¸ñ·Ï</h3>
 	<div id="list"></div>
-	<div id="detail" style="position:absolute; top:100px; left:300px"></div>
 </body>
 </html>

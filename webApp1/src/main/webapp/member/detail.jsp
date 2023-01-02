@@ -1,21 +1,25 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>   
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+    
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
+<meta charset="EUC-KR">
 <title>Insert title here</title>
 </head>
 <body>
-<h3>ìƒì„¸í˜ì´ì§€</h3>
-id:${vo.id }<br/>
-pwd:${vo.pwd }<br/>
-name:${vo.name }<br/>
-email:${vo.email }<br/>
+<h3>»ó¼¼ÆäÀÌÁö</h3>
+<form action="${pageContext.request.contextPath}/member/detail" method="post">
+id:<input type="text" value="${vo.id }"><br/>
+pwd:<input type="text" value="${vo.pwd }"><br/>
+name:<input type="text" value="${vo.name }"><br/>
+email:<input type="text" value="${vo.email }"><br/>
 type:
-<c:if test="${vo.type==1 }">êµ¬ë§¤ì</c:if>
-<c:if test="${vo.type==2 }">íŒë§¤ì</c:if>
+<c:if test="${vo.type==1}">±¸¸ÅÀÚ</c:if>
+<c:if test="${vo.type==2}">ÆÇ¸ÅÀÚ</c:if>
 <br/>
+<input type="submit" value="¼öÁ¤">
+</form>
 </body>
 </html>

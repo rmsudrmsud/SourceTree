@@ -39,7 +39,7 @@ public class ProductDao {
 		}
 	}
 
-	public ProductVo selectByNum(int num) {
+	public ProductVo select(int num) {
 		ProductVo vo = null;
 		ResultSet rs = null;
 
@@ -65,7 +65,6 @@ public class ProductDao {
 				e.printStackTrace();
 			}
 		}
-		System.out.println(vo);
 		return vo;
 	}
 

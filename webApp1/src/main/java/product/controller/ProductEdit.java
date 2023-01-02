@@ -52,9 +52,10 @@ public class ProductEdit extends HttpServlet {
 		String name = request.getParameter("name");
 		int price = Integer.parseInt(request.getParameter("price"));
 		int amount = Integer.parseInt(request.getParameter("amount"));
-		String seller= request.getParameter("seller");
+		String seller = request.getParameter("seller");
+
 		ProductService service = new ProductService();
-		service.editProduct(new ProductVo(num, name, price, amount, seller));
+		service.editProduct(new ProductVo(num, name, price, amount,seller));
 		response.sendRedirect("/webApp1/product/list");
 	}
 

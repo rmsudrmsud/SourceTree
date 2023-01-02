@@ -14,7 +14,7 @@ import product.ProductService;
 import product.ProductVo;
 
 /**
- * Servlet implementation class ProductSearch
+ * Servlet implementation class ProductByName
  */
 @WebServlet("/product/getbyname")
 public class ProductByName extends HttpServlet {
@@ -33,14 +33,15 @@ public class ProductByName extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		request.setCharacterEncoding("UTF-8");
-		response.setCharacterEncoding("UTF-8");
+		request.setCharacterEncoding("euc-kr");
+		response.setCharacterEncoding("euc-kr");
 		
-		ProductService service = new ProductService();
 		String name = request.getParameter("name");
+		ProductService service = new ProductService();
 		ArrayList<ProductVo> list = service.getByName(name);
 		request.setAttribute("list", list);
-		RequestDispatcher dis = request.getRequestDispatcher("/product/list.jsp");
+		RequestDispatcher dis = 
+				request.getRequestDispatcher("/product/list.jsp");
 		dis.forward(request, response);
 	}
 

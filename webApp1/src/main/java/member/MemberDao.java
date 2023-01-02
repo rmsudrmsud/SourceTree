@@ -17,7 +17,7 @@ public class MemberDao {
 	}
 
 	public void insert(MemberVo vo) {
-		String sql = "insert into member1 values(?,?,?,?,?)";
+		String sql = "insert into member values(?,?,?,?,?)";
 		Connection conn = dbconn.conn();
 		try {
 			PreparedStatement pstmt = conn.prepareStatement(sql);
@@ -46,7 +46,7 @@ public class MemberDao {
 		MemberVo vo = null;
 		ResultSet rs = null;
 		
-		String sql = "select * from member1 where id=?";
+		String sql = "select * from member where id=?";
 		Connection conn = dbconn.conn();
 		
 		try {
@@ -74,7 +74,7 @@ public class MemberDao {
 
 	// pwd 수정
 	public void update(MemberVo vo) {
-		String sql = "update member1 set pwd=? where id=?";
+		String sql = "update member set pwd=? where id=?";
 		Connection conn = dbconn.conn();
 		try {
 			PreparedStatement pstmt = conn.prepareStatement(sql);
@@ -95,7 +95,7 @@ public class MemberDao {
 	}
 
 	public void delete(String id) {
-		String sql = "delete from member1 where id=?";
+		String sql = "delete from member where id=?";
 		Connection conn = dbconn.conn();
 		try {
 			PreparedStatement pstmt = conn.prepareStatement(sql);
@@ -114,17 +114,20 @@ public class MemberDao {
 		}
 	}
 	
-	//전체출력
 	public ArrayList<MemberVo> selectAll() {
-		ArrayList<MemberVo> list = new ArrayList<>();
+		
 		ResultSet rs = null;
-		String sql = "select*from member1";
+		ArrayList<MemberVo> list = new ArrayList<>();
+		String sql = "select * from member";
 		Connection conn = dbconn.conn();
+		
 		try {
 			PreparedStatement pstmt = conn.prepareStatement(sql);
 			rs = pstmt.executeQuery();
-			while (rs.next()) {
-				list.add(new MemberVo(rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getInt(5)));
+			
+			while(rs.next()) {
+				list.add(new MemberVo(rs.getString(1), rs.getString(2), 
+						rs.getString(3), rs.getString(4),rs.getInt(5)));
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -136,6 +139,8 @@ public class MemberDao {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-		}return list;
+		}
+		return list;
 	}
+
 }

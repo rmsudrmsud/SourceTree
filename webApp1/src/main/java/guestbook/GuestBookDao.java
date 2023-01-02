@@ -36,7 +36,7 @@ public class GuestBookDao {
 			}
 		}
 	}
-	
+
 	public GuestBookVo select(int num) {
 		GuestBookVo vo = null;
 		ResultSet rs = null;

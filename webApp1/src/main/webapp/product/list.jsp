@@ -1,53 +1,40 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
+<meta charset="EUC-KR">
 <title>Insert title here</title>
 </head>
 <body>
-<h3>상품목록</h3>
-<c:if test="${sessionScope.type==1 }">
+<h3>��ǰ���</h3>
 <c:if test="${empty list }">
-등록된 상품이 없음<br/>
-</c:if>
-
+��ϵ� ��ǰ�� ����<br/>
 </c:if>
 <c:if test="${not empty list }">
 <form action="/webApp1/product/getbyname" method="post">
-상품명:
-<input type ="text" name ="name">
-<input type ="submit" value="이름으로검색">
+��ǰ��:<input type="text" name="name">
+<input type="submit" value="�̸����� �˻�">
 </form><br/>
-
 <form action="/webApp1/product/getbyprice" method="post">
-상품가격:
-<input type ="number" name="pr1">~<input type ="number" name="pr2">
-<input type ="submit" value="가격으로검색">
+���ݹ���:<input type="number" name="pr1">~<input type="number" name="pr2">
+<input type="submit" value="�������� �˻�">
 </form><br/>
-
 <form action="/webApp1/product/getbyseller" method="post">
-판매자명:
-<input type ="text" name="seller">
-<input type ="submit" value="가격으로검색">
+�Ǹ��ڸ�:<input type="text" name="seller">
+<input type="submit" value="�Ǹ��ڷ� �˻�">
 </form><br/>
-		<table border="1">
-			<tr>
-				<th>상품번호</th>
-				<th>상품명</th>
-				<th>가격</th>
-			</tr>
-			<c:forEach var="vo" items="${list }">
-				<!-- var: 사용할변수이름 -->
-				<tr>
-					<td>>${vo.num }</td><!-- edit폼에 ? 파라메터로 num=${vo.num } 넘김 -->
-					<td><a href="/webApp1/product/detail?num=${vo.num}">${vo.name }</a></td>
-					<td>${vo.price }</td>
-				</tr>
-			</c:forEach>
-		</table>
+<table border="1">
+<tr><th>��ȣ</th><th>��ǰ��</th><th>����</th></tr>
+<c:forEach var="vo" items="${list }">
+<tr>
+<td>${vo.num }</td>
+<td><a href="/webApp1/product/detail?num=${vo.num }">${vo.name }</a></td>
+<td>${vo.price }</td>
+</tr>
+</c:forEach>
+</table>
 </c:if>
 </body>
 </html>

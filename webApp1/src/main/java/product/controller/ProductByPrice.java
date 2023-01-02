@@ -33,15 +33,14 @@ public class ProductByPrice extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		request.setCharacterEncoding("UTF-8");
-		response.setCharacterEncoding("UTF-8");
 		
+		int pr1 =Integer.parseInt(request.getParameter("pr1"));
+		int pr2 =Integer.parseInt(request.getParameter("pr2"));
 		ProductService service = new ProductService();
-		int pr1 = Integer.parseInt(request.getParameter("pr1"));
-		int pr2 = Integer.parseInt(request.getParameter("pr2"));
-		ArrayList<ProductVo> list = service.getByPrice(pr1,pr2);
+		ArrayList<ProductVo> list = service.getByPrice(pr1, pr2);
 		request.setAttribute("list", list);
-		RequestDispatcher dis = request.getRequestDispatcher("/product/list.jsp");
+		RequestDispatcher dis = 
+				request.getRequestDispatcher("/product/list.jsp");
 		dis.forward(request, response);
 	}
 

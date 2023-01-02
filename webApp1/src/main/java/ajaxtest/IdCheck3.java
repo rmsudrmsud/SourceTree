@@ -30,20 +30,17 @@ public class IdCheck3 extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		request.setCharacterEncoding("UTF-8");
-		response.setContentType("text/html;charset=UTF-8");
-		response.setCharacterEncoding("UTF-8");
-		
+		request.setCharacterEncoding("euc-kr");
+		response.setCharacterEncoding("euc-kr");
+		response.setContentType("text/html; charset=EUC-KR");
 		String id = request.getParameter("id");
 		MemberService service = new MemberService();
 		MemberVo vo = service.getMember(id);
-		
 		String msg = "사용불가능한 아이디";
 		if(vo==null) {
-			msg = "사용가능한 아이디";
+			msg = "사용 가능한 아이디";
 		}
 		response.getWriter().append(msg);
-		
 	}
 
 	/**

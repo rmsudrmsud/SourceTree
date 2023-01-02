@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<books>
+	<book>
+		<bookid>1</bookid>
+		<title>aaa</title>
+		<author>아무개</author>
+		<price>1000</price>
+	</book>
+	<book>
+		<bookid>2</bookid>
+		<title>데이터찾기</title>
+		<author>신세경</author>
+		<price>2000</price>
+	</book>
+	<book>
+		<bookid>3</bookid>
+		<title>데이터요청</title>
+		<author>장국영</author>
+		<price>3000</price>
+	</book>
+	<book>
+		<bookid>4</bookid>
+		<title>데이터활용</title>
+		<author>김태희</author>
+		<price>4000</price>
+	</book>
+</books>

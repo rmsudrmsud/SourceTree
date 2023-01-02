@@ -1,38 +1,36 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
+<meta charset="EUC-KR">
 <title>Insert title here</title>
 <script type="text/javascript">
-//í˜ì´ì§€ ë¡œë“œì‹œ ì‹œì‘ë˜ëŠ” í•¨ìˆ˜
+//ÆäÀÌÁö ·Îµå µÇÀÚ¸¶ÀÚ ½ÇÇà
 window.onload = () => {
-	let msg = "ì¤‘ë³µëœì•„ì´ë””"
+	let msg = "Áßº¹µÈ ¾ÆÀÌµğ";
 	if(${flag}){
-		alert('${id}');
-		msg = "ì‚¬ìš©ê°€ëŠ¥í•œ ì•„ì´ë””";
-		msg += "<input type='button' value='ì‚¬ìš©' onclick='a()'>";	
+		msg = "»ç¿ë°¡´ÉÇÑ ¾ÆÀÌµğ";
+		msg += "<input type='button' value='»ç¿ë' onclick='a()'>";
 		f.id.value = '${id}';
 	}
-	let div = document.getElementById("res");
-	div.innerHTML = msg;
+ 	let div = document.getElementById("res");
+ 	div.innerHTML = msg;
 }
 
 const a = () => {
-	//ì¤‘ë³µì²´í¬í•œ ì•„ì´ë””ë¥¼ íšŒì›ê°€ì…ì°½ opener(íŒœì—…ì°½) id ì…ë ¥ë€ì— ì‘ì„±
+	//Áßº¹Ã¼Å©ÇÑ ¾ÆÀÌµğ¸¦ È¸¿ø°¡ÀÔ Ã¢ idÀÔ·Â¶õ¿¡ ÀÛ¼º
 	opener.document.f.id.value = window.document.f.id.value;
-	
 	opener.document.f.flag.value="true";
-	//í˜„ì¬ì°½ì„ ë‹«ê¸°
+	//ÇöÀç Ã¢À» ´İ¾Æ¶ó
 	window.close();
 }
 </script>
 </head>
 <body>
 <form action="/webApp1/idcheck" method="post" name="f">
-id:<input type="text" name="id" id="id">
-<input type="submit" value="ì¤‘ë³µì²´í¬">
+id:<input type="text" name="id">
+<input type="submit" value="Áßº¹Ã¼Å©">
 </form>
 <div id="res"></div>
 </body>

@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
@@ -8,10 +8,10 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h3>ë‚´ê°€ ë“±ë¡í•œ ìƒí’ˆ</h3>
-<a href="/webApp1/product/add">ìƒí’ˆë“±ë¡</a><br/>
+<h3>³»°¡ µî·ÏÇÑ »óÇ°</h3>
+<a href="/webApp1/product/add">»óÇ°µî·Ï</a><br/>
 <table border="1">
-<tr><th>ë²ˆí˜¸</th><th>ìƒí’ˆëª…</th><th>ê°€ê²©</th></tr>
+<tr><th>¹øÈ£</th><th>»óÇ°¸í</th><th>°¡°Ý</th></tr>
 <c:forEach var="vo" items="${list }">
 <tr>
 <td>${vo.num }</td>

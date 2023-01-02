@@ -2,4 +2,10 @@
 <typeInfoHistroy>
     <typeInfo handle="=Basic/src&lt;addr_ArrayList{Dao.java[Dao" modifiers="513" timestamp="1667265225000"/>
     <typeInfo handle="=commandHandle/src\/main\/java&lt;handler{Handler.java[Handler" modifiers="513" timestamp="1670309799000"/>
+    <typeInfo handle="=travel/src\/main\/java&lt;handler{Handler.java[Handler" modifiers="513" timestamp="1670307634000"/>
+    <typeInfo handle="=webapp2/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;member{MemberDao.java[MemberDao" modifiers="513" timestamp="1671427762000"/>
+    <typeInfo handle="=webapp2/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;handler{Handler.java[Handler" modifiers="513" timestamp="1670474538000"/>
+    <typeInfo handle="=webapp2/\/opt\/homebrew\/Cellar\/tomcat\@9\/9.0.69\/apache-tomcat-9.0.62\/lib\/catalina-tribes.jar=/javadoc_location=/https:\/\/tomcat.apache.org\/tomcat-9.0-doc\/api\/=/=/owner.project.facets=/jst.web=/&lt;org.apache.catalina.tribes(Member.class[Member" modifiers="1537" timestamp="1668943921000"/>
+    <typeInfo handle="=imgboard/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;handler{Handler.java[Handler" modifiers="513" timestamp="1670474538000"/>
+    <typeInfo handle="=dataApp/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;handler{Handler.java[Handler" modifiers="513" timestamp="1670474538000"/>
 </typeInfoHistroy>

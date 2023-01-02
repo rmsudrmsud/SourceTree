@@ -32,28 +32,23 @@ public class MemDetail extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		request.setCharacterEncoding("UTF-8");
-		response.setContentType("text/html;charset=UTF-8");
-		
 		String id = request.getParameter("id");
 		MemberService service = new MemberService();
 		MemberVo vo = service.getMember(id);
-		
-		//검색결과를 request에 담는다.
-		request.setAttribute("vo",vo);
-		
-		//requestDispacher객체를 생성하여 /member/detail.jsp로 이동.
-		RequestDispatcher dis = request.getRequestDispatcher("/member/detail.jsp");
-		dis.forward(request, response);
-		
+		request.setAttribute("vo",vo); //request에 저장
+		RequestDispatcher dis = //디스패처 객체 생성
+				request.getRequestDispatcher("/member/detail.jsp");
+		dis.forward(request,response);
+	
 	}
+	
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		doGet(request, response); //get,post방식구분없이 동작할 경우 내버려두기
+		doGet(request, response);
 	}
 
 }

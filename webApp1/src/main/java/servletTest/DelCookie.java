@@ -30,7 +30,8 @@ public class DelCookie extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		RequestDispatcher dis =	request.getRequestDispatcher("/cookie/delForm.jsp");
+		RequestDispatcher dis = 
+				request.getRequestDispatcher("/cookie/delForm.jsp");
 		dis.forward(request, response);
 	}
 
@@ -41,10 +42,11 @@ public class DelCookie extends HttpServlet {
 		// TODO Auto-generated method stub
 		String delKey = request.getParameter("ra");
 		Cookie[] cookies = request.getCookies();
-		for (Cookie c :cookies) {
+		//배열에서 1개씩꺼내서 비교
+		for (Cookie c : cookies) {
 			if(c.getName().equals(delKey)) {
-				c.setMaxAge(0);//유효시간 0으로 설정 바로삭제
-				response.addCookie(c);//클라이언트에 보냈다가다시 읽어들여서 삭제
+				c.setMaxAge(0);//유효시간 0으로 설정
+				response.addCookie(c);
 			}
 		}
 		response.sendRedirect("/webApp1/ReadCookie");

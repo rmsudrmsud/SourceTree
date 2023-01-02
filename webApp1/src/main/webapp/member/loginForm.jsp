@@ -1,19 +1,19 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
+<meta charset="EUC-KR">
 <title>Insert title here</title>
 </head>
 <body>
-<h3>ë¡œê·¸ì¸</h3>
-<form action="/webApp1/login" method="post">
+<h3>·Î±×ÀÎÆû</h3>
+<form action=${pageContext.request.contextPath}/member/login" method="post">
 <table border="1">
-<tr><th>ID:<input type="text" name="id"><br/></th></tr>
-<tr><th>PWD:<input type="password" name="pwd"><br/></th></tr>
-<tr><th>Login</th><td><input type="submit" value="login">
-<a href="/webApp1/JoinController">íšŒì›ê°€ì…</a>
+<tr><th>ID</th><td><input type="text" name="id"></td></tr>
+<tr><th>PWD</th><td><input type="password" name="pwd"></td></tr>
+<tr><th>LOGIN</th><td><input type="submit" value="login">
+<a href="${pageContext.request.contextPath}/member/join">È¸¿ø°¡ÀÔ</a>
 </td></tr>
 </table>
 </form>

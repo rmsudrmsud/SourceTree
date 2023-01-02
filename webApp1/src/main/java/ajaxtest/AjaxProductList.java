@@ -35,20 +35,20 @@ public class AjaxProductList extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		request.setCharacterEncoding("UTF-8");
-		response.setContentType("text/html;charset=UTF-8");
+		request.setCharacterEncoding("euc-kr");
+		response.setCharacterEncoding("euc-kr");
+		response.setContentType("text/html; charset=EUC-KR");
 		
 		ProductService service = new ProductService();
 		ArrayList<ProductVo> list = service.getAll();
-		JSONArray arr = new JSONArray(); //제이슨배열 생성
-		for(ProductVo p : list) {
-			JSONObject obj = new JSONObject(); //꼭 다넣지 않아도 내가보고싶은것만 넣어도됨
+		JSONArray arr = new JSONArray();
+		for(ProductVo p:list) {
+			JSONObject obj = new JSONObject();
 			obj.put("num", p.getNum());
 			obj.put("name", p.getName());
 			obj.put("price", p.getPrice());
 			arr.add(obj);
 		}
-		
 		String txt = arr.toJSONString();
 		response.getWriter().append(txt);
 	}

@@ -13,13 +13,13 @@ import javax.servlet.http.HttpServletResponse;
  * Servlet implementation class AjaxTest1
  */
 @WebServlet("/ajax/test1")
-public class AjaxTest1 extends HttpServlet {
+public class ajaxTest1 extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	/**
 	 * @see HttpServlet#HttpServlet()
 	 */
-	public AjaxTest1() {
+	public ajaxTest1() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
@@ -31,13 +31,13 @@ public class AjaxTest1 extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		request.setCharacterEncoding("UTF-8");
-		response.setContentType("text/html;charset=UTF-8");
-		
+		request.setCharacterEncoding("euc-kr");
+		response.setCharacterEncoding("euc-kr");
+		response.setContentType("text/html; charset=EUC-KR");
+
 		String name = request.getParameter("name");
 		request.setAttribute("name", name);
 		response.getWriter().append("name:"+name);
-		
 	}
 
 	/**
